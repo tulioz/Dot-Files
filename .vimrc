@@ -90,7 +90,7 @@ map <C-l> <C-w>l
 
 nnoremap <leader><space> :noh<cr>
 
-cmap w!! w !sudo tee % >/dev/null # change current file to be opened as 'sudo' and write the file
+cmap w!! w !sudo tee % >/dev/null " change current file to be opened as 'sudo' and write the file
 
 nnoremap / /\v
 vnoremap / /\v
