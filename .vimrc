@@ -44,12 +44,12 @@ set scrolloff=3
 set showmode
 set showcmd
 set wildmenu
-set wildmode=list:longest
+set wildmode=list:longest,full
 set cursorline
 set ttyfast
 set ruler
 set laststatus=2
-set relativenumber
+"set relativenumber
 set undofile
 
 set history=1000	"remember more commands and search history
@@ -117,3 +117,7 @@ au FocusLost * :wa
 inoremap jj <ESC>
 
 noremap <leader>w <C-w>v<C-w>l
+
+if has('gui_running')
+    set guifont=Consolas:h12
+endif
