@@ -69,7 +69,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=tab:>·,trail:·,extends:#,nbsp:·
 
 " autocmd filetype python set expandtab
 
@@ -90,7 +90,8 @@ map <C-l> <C-w>l
 
 nnoremap <leader><space> :noh<cr>
 
-cmap w!! w !sudo tee % >/dev/null " change current file to be opened as 'sudo' and write the file
+cmap w!! w !sudo tee % >/dev/null 
+" change current file to be opened as 'sudo' and write the file
 
 nnoremap / /\v
 vnoremap / /\v
@@ -119,5 +120,18 @@ inoremap jj <ESC>
 noremap <leader>w <C-w>v<C-w>l
 
 if has('gui_running')
-    set guifont=Consolas:h12
+    set guifont=Inconsolata\ 9 " Consolas:h12? For Mac/Windows
 endif
+
+nnoremap <silent> <F8> :TlistToggle<CR>
+
+" Specific settings for file types
+autocmd FileType python,ruby set tabstop=2|set shiftwidth=2|set softtabstop=2
+
+autocmd FileType html,mako set tabstop=2|set shiftwidth=2|set softtabstop=2
+
+au BufRead,BufNewFile *.tmpl set filetype=mako "Am working with mako instead of cheetah
+
+set guioptions-=T " No toolbar
+
+set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ %{strftime(\"%c\",getftime(expand(\"%:p\")))}%=\ line:%l\/%L\ col:%c%V\ pos:%o\ ascii:%b\ %P
