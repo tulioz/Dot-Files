@@ -1,5 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/ofergoldstein/Desktop/final-ecs193/CES-iPhone-App/iOS/UCD Events/UCD Events'
-let g:netrw_dirhist_2='/home/ogoldstein/deployer/docs/_static'
-let g:netrw_dirhist_3='/home/ogoldstein/dev/deployer/webapp/view/error'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/ogoldstein/dev/dev2qa/model'
+let g:netrw_dirhist_2='/home/ogoldstein/dev/dev2qa'
+let g:netrw_dirhist_3='/home/ogoldstein/dev/dev2qa/controller'
+let g:netrw_dirhist_4='/home/ogoldstein/dev/dev2qa'
+let g:netrw_dirhist_5='/home/ogoldstein/dev/dev2qa/view'
+let g:netrw_dirhist_6='/home/ogoldstein/dev/dev2qa'
+let g:netrw_dirhist_7='/home/ogoldstein/.ipython'
+let g:netrw_dirhist_8='/home/ogoldstein/dev/flaskdev2qa/static'

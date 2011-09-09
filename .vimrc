@@ -60,7 +60,8 @@ set visualbell		" don't beep
 set noerrorbells	" don't beep
 
 if &t_Co >= 256 || has("gui_running")
-	colorscheme mustang
+  colorscheme mustang
+  "colorscheme lucius
 endif
 
 if &t_Co > 2 || has("gui_running")
@@ -126,12 +127,17 @@ endif
 nnoremap <silent> <F8> :TlistToggle<CR>
 
 " Specific settings for file types
-autocmd FileType python,ruby set tabstop=2|set shiftwidth=2|set softtabstop=2
+autocmd FileType ruby set tabstop=2|set shiftwidth=2|set softtabstop=2
 
-autocmd FileType html,mako set tabstop=2|set shiftwidth=2|set softtabstop=2
-
-au BufRead,BufNewFile *.tmpl set filetype=mako "Am working with mako instead of cheetah
+"au BufRead,BufNewFile *.tmpl set filetype=mako "Am working with mako instead of cheetah
+au BufRead,BufNewFile *.tmpl set filetype=mako "Am working with django instead of cheetah
+au BufRead,BufNewFile *.html set filetype=jinja "Am working with django instead of cheetah
 
 set guioptions-=T " No toolbar
 
 set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ %{strftime(\"%c\",getftime(expand(\"%:p\")))}%=\ line:%l\/%L\ col:%c%V\ pos:%o\ ascii:%b\ %P
+
+"From sontek.net/turning-vim-into-a-modern-python-ide
+let g:SuperTabDefaultCompletionType="context"
+
+set completeopt=menuone,longest,preview
