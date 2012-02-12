@@ -15,14 +15,20 @@ Bundle 'delimitMate.vim'
 Bundle 'closetag.vim'
 Bundle 'pyflakes.vim'
 Bundle 'The-NERD-Commenter'
+Bundle 'fugitive.vim'
+Bundle 'garbas/vim-showmarks'
 Bundle 'SuperTab-continued.'
 let g:SuperTabDefaultCompletionType = "context"
 
-Bundle 'fugitive.vim'
 Bundle 'Tagbar'
 let g:tagbar_ctags_bin='/usr/local/Cellar/ctags/5.8/bin/ctags'
+
 Bundle 'surround.vim'
 Bundle 'Mustang2'
+Bundle 'molok/vim-smartusline'
+Bundle 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
 
 "SnipMate
 "Install dependencies:
