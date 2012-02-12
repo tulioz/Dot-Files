@@ -20,8 +20,17 @@ let g:SuperTabDefaultCompletionType = "context"
 
 Bundle 'fugitive.vim'
 Bundle 'Tagbar'
+let g:tagbar_ctags_bin='/usr/local/Cellar/ctags/5.8/bin/ctags'
 Bundle 'surround.vim'
 Bundle 'Mustang2'
+
+"SnipMate
+"Install dependencies:
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "snipmate-snippets"
+"Install
+Bundle "garbas/vim-snipmate"
 
 filetype plugin indent on     " required!
 "
@@ -51,8 +60,7 @@ set softtabstop=4
 set expandtab       "expand tabs to spaces
 set backspace=indent,eol,start "allow backspacking over everything in insert mode
 set autoindent      "always set autoindent
-set copyindent      "copy the previos indentation on autoindenting
-set number          "always show line numbers
+set copyindent      "copy the previous indentation on autoindenting
 set shiftround      "multiple of shiftwidth when indenting with '<' and '>'
 set showmatch       "show matching parenthesis
 set ignorecase      "ignore case when searching
@@ -69,7 +77,7 @@ set showmode
 set showcmd
 set cursorline
 set ttyfast
-set ruler
+set ruler "Show information on vim bottom
 set laststatus=2
 set undofile
 
@@ -95,24 +103,26 @@ set wildignore+=migrations                       " Django migrations
 set wildignore+=*.pyc                            " Python byte code
 set wildignore+=*.orig                           " Merge resolution files
 
+set list
+set listchars=tab:>·,trail:·,extends:#,nbsp:·   "Let me see spaces and tabs
+set mouse=a                                     "Allow mouse features
+set pastetoggle=<F2>                            "No autoindent in paste mode
+set gdefault                                    "Defaults to /g for switch
+
+"always show line numbers, but only in current window
+set number
+:au WinEnter * :setlocal number
+:au WinLeave * :setlocal nonumber
+
+" Automatically resize vertical splits.
+:au WinEnter * :set winfixheight
+:au WinEnter * :wincmd =
+
 syntax on " switch syntax highlight on
 
 if &t_Co >= 256 || has("gui_running")
-  "colorscheme mustang
   colorscheme Mustang
-  "colorscheme lucius
 endif
-
-set list
-set listchars=tab:>·,trail:·,extends:#,nbsp:·
-
-" autocmd filetype python set expandtab
-
-" autocmd filetype html,xml set listchars-=tab:>.
-
-set pastetoggle=<F2>
-
-" set mouse=a
 
 nnoremap ; :
 
@@ -121,7 +131,8 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-nnoremap <leader><space> :noh<cr>
+"nnoremap <leader><space> :noh<cr>
+nnoremap <leader><space> :noh<ESC>
 
 " change current file to be opened as 'sudo' and write the file
 cmap w!! %!sudo tee > /dev/null %
@@ -129,7 +140,6 @@ cmap w!! %!sudo tee > /dev/null %
 " Use sane regex
 nnoremap / /\v
 vnoremap / /\v
-set gdefault
 
 nnoremap <tab> %
 vnoremap <tab> %
@@ -176,7 +186,7 @@ endif
 " Specific settings for file types
 autocmd FileType ruby set tabstop=2|set shiftwidth=2|set softtabstop=2
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
 
 "set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ %{strftime(\"%c\",getftime(expand(\"%:p\")))}%=\ line:%l\/%L\ col:%c%V\ pos:%o\ ascii:%b\ %P
