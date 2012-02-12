@@ -1,13 +1,27 @@
-" This must be first, it changes other options as side effect
-set nocompatible
+set nocompatible               " be iMproved
+filetype off                   " required!
 
-"Use pathogen to easily modifty the runtime path to include all
-"plugins under the ~./vim/bundle directory
-filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+
+filetype plugin indent on     " required! 
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed.
+
 
 set modelines=0
 
