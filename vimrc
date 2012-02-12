@@ -9,7 +9,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
-"
+Bundle 'Command-T'
+Bundle 'Headlights'
 
 filetype plugin indent on     " required! 
 "
