@@ -5,14 +5,26 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
 Bundle 'Command-T'
 Bundle 'Headlights'
+Bundle 'delimitMate.vim'
+Bundle 'closetag.vim'
+Bundle 'pyflakes.vim'
+Bundle 'The-NERD-Commenter'
+Bundle 'SuperTab'
+"From sontek.net/turning-vim-into-a-modern-python-ide
+let g:SuperTabDefaultCompletionType="context"
 
-filetype plugin indent on     " required! 
+Bundle 'fugitive.vim'
+Bundle 'Tagbar'
+Bundle 'surround.vim'
+
+
+filetype plugin indent on     " required!
 "
 " Brief help
 " :BundleList          - list configured bundles
@@ -136,13 +148,16 @@ inoremap jj <ESC>
 noremap <leader>w <C-w>v<C-w>l
 
 if has('gui_running')
-    set guifont=Inconsolata\ 9 " Consolas:h12? For Mac/Windows
+    "set guifont=Inconsolata\ 9 " Consolas:h12? For Mac/Windows
+    set guifont=Inconsolata:h13
 endif
 
 nnoremap <silent> <F8> :TlistToggle<CR>
 
 " Specific settings for file types
 autocmd FileType ruby set tabstop=2|set shiftwidth=2|set softtabstop=2
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
 
 "au BufRead,BufNewFile *.tmpl set filetype=mako "Am working with mako instead of cheetah
 au BufRead,BufNewFile *.tmpl set filetype=mako "Am working with django instead of cheetah
@@ -151,8 +166,5 @@ au BufRead,BufNewFile *.html set filetype=jinja "Am working with django instead 
 set guioptions-=T " No toolbar
 
 set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ %{strftime(\"%c\",getftime(expand(\"%:p\")))}%=\ line:%l\/%L\ col:%c%V\ pos:%o\ ascii:%b\ %P
-
-"From sontek.net/turning-vim-into-a-modern-python-ide
-let g:SuperTabDefaultCompletionType="context"
 
 set completeopt=menuone,longest,preview
