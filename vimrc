@@ -17,15 +17,18 @@ Bundle 'pyflakes.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'fugitive.vim'
 Bundle 'garbas/vim-showmarks'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'surround.vim'
+Bundle 'Mustang2'
+Bundle 'Syntastic'
+
 Bundle 'SuperTab-continued.'
 let g:SuperTabDefaultCompletionType = "context"
 
 Bundle 'Tagbar'
 let g:tagbar_ctags_bin='/usr/local/Cellar/ctags/5.8/bin/ctags'
+nmap <F8> :TagbarToggle<CR> " Have F8 toggle the tagbar
 
-Bundle 'surround.vim'
-Bundle 'Mustang2'
-Bundle 'molok/vim-smartusline'
 Bundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
@@ -37,6 +40,7 @@ Bundle "tomtom/tlib_vim"
 Bundle "snipmate-snippets"
 "Install
 Bundle "garbas/vim-snipmate"
+
 
 filetype plugin indent on     " required!
 "
@@ -111,6 +115,7 @@ set wildignore+=*.orig                           " Merge resolution files
 
 set list
 set listchars=tab:>·,trail:·,extends:#,nbsp:·   "Let me see spaces and tabs
+                                                "If want eol append ',eol:¬'
 set mouse=a                                     "Allow mouse features
 set pastetoggle=<F2>                            "No autoindent in paste mode
 set gdefault                                    "Defaults to /g for switch
@@ -197,46 +202,46 @@ autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bu
 
 "set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ %{strftime(\"%c\",getftime(expand(\"%:p\")))}%=\ line:%l\/%L\ col:%c%V\ pos:%o\ ascii:%b\ %P
 " Smart status line code from: http://www.reddit.com/r/vim/comments/gexi6/a_smarter_statusline_code_in_comments/
-hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
-hi Modified guibg=orange guifg=black ctermbg=lightred ctermfg=black
+"hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
+"hi Modified guibg=orange guifg=black ctermbg=lightred ctermfg=black
 
-function! MyStatusLine(mode)
-    let statusline=""
-    if a:mode == 'Enter'
-        let statusline.="%#StatColor#"
-    endif
-    let statusline.="\(%n\)\ %f\ "
-    if a:mode == 'Enter'
-        let statusline.="%*"
-    endif
-    let statusline.="%#Modified#%m"
-    if a:mode == 'Leave'
-        let statusline.="%*%r"
-    elseif a:mode == 'Enter'
-        let statusline.="%r%*"
-    endif
-    let statusline .= "\ (%l/%L,\ %c)\ %P%=%h%w\ %y\ [%{&encoding}:%{&fileformat}]\ \ "
-    return statusline
-endfunction
+"function! MyStatusLine(mode)
+    "let statusline=""
+    "if a:mode == 'Enter'
+        "let statusline.="%#StatColor#"
+    "endif
+    "let statusline.="\(%n\)\ %f\ "
+    "if a:mode == 'Enter'
+        "let statusline.="%*"
+    "endif
+    "let statusline.="%#Modified#%m"
+    "if a:mode == 'Leave'
+        "let statusline.="%*%r"
+    "elseif a:mode == 'Enter'
+        "let statusline.="%r%*"
+    "endif
+    "let statusline .= "\ (%l/%L,\ %c)\ %P%=%h%w\ %y\ [%{&encoding}:%{&fileformat}]\ \ "
+    "return statusline
+"endfunction
 
-au WinEnter * setlocal statusline=%!MyStatusLine('Enter')
-au WinLeave * setlocal statusline=%!MyStatusLine('Leave')
-set statusline=%!MyStatusLine('Enter')
+"au WinEnter * setlocal statusline=%!MyStatusLine('Enter')
+"au WinLeave * setlocal statusline=%!MyStatusLine('Leave')
+"set statusline=%!MyStatusLine('Enter')
 
-function! InsertStatuslineColor(mode)
-  if a:mode == 'i'
-    hi StatColor guibg=orange ctermbg=lightred
-  elseif a:mode == 'r'
-    hi StatColor guibg=#e454ba ctermbg=magenta
-  elseif a:mode == 'v'
-    hi StatColor guibg=#e454ba ctermbg=magenta
-  else
-    hi StatColor guibg=red ctermbg=red
-  endif
-endfunction
+"function! InsertStatuslineColor(mode)
+  "if a:mode == 'i'
+    "hi StatColor guibg=orange ctermbg=lightred
+  "elseif a:mode == 'r'
+    "hi StatColor guibg=#e454ba ctermbg=magenta
+  "elseif a:mode == 'v'
+    "hi StatColor guibg=#e454ba ctermbg=magenta
+  "else
+    "hi StatColor guibg=red ctermbg=red
+  "endif
+"endfunction
 
-au InsertEnter * call InsertStatuslineColor(v:insertmode)
-au InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
+"au InsertEnter * call InsertStatuslineColor(v:insertmode)
+"au InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
 " End smart status line code
 
 function! MakeExecutable()
