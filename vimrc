@@ -16,7 +16,7 @@ Bundle 'closetag.vim'
 Bundle 'pyflakes.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'fugitive.vim'
-Bundle 'garbas/vim-showmarks'
+"Bundle 'garbas/vim-showmarks'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'surround.vim'
 Bundle 'Mustang2'
@@ -181,6 +181,8 @@ vnoremap <A-j> :m'>+<CR>gv=gv
 vnoremap <A-k> :m-2<CR>gv=gv
 vnoremap <A-h> <gv
 vnoremap <A-l> >gv
+
+nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
 au FocusLost * :wa " save when vim loses focus
 
