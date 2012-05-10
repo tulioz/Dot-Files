@@ -1,2 +1,2 @@
-bundle/
-!bundle/vundle
+Vim/bundle/
+!Vim/bundle/vundle
