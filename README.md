@@ -1,7 +1,8 @@
 Install
 =======
-First clone the repository `git clone git://github.com/tulioz/Vim-Files.git ~/.vim`.
-Symlink .vim/vimrc properly by doing `ln -s ~/.vim/vimrc ~/.vimrc`.
+First clone the repository `git clone git://github.com/tulioz/Dot-Files.git`.
+Symlink .vim by doing `ln -s ~/Dot-Files/Vim/ ~/.vim`.
+Symlink .vimrc by doing `ln -s ~/Dot-Files/Vim/vimrc ~/.vim`.
 Once that is complete run Vim and type `:BundleInstall` to install all the
 plugins.
 
