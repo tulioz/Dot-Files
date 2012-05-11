@@ -1,8 +1,12 @@
 Install
 =======
-First clone the repository
+1. First clone the repository:
 
-    `git clone git://github.com/tulioz/Dot-Files.git`
+    `git clone git://github.com/tulioz/Dot-Files.git ~/Dot-Files`
+
+* Next update all the submodules:
+
+    `cd ~/Dot-Files && git submodule update --init --recursive`
 
 ## vim
 1. Symlink .vim by doing:
@@ -19,14 +23,14 @@ First clone the repository
 
 Some plugins will require some extra configuration.
 
-#### For Command-T:
+### For Command-T:
 
 1. `cd ~/.vim/bundle/Command-T/ruby/command-t`
 * `rvm use system`
 * `ruby extconf.rb`
 * `make`
 
-#### For TagBar:
+### For TagBar:
 In `Dot-Files/Vim/vimrc` confirm that `g:tagbar_ctags_bin` points to exuberant ctags on the
 system, or remove the current line if your ctags is in your PATH.
 
