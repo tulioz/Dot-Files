@@ -7,7 +7,7 @@ First clone the repository
 ## vim
 1. Symlink .vim by doing:
 
-    `ln -s ~/Dot-Files/Vim/ ~/.vim`
+    `ln -s ~/Dot-Files/Vim/vim ~/.vim`
 
 * Symlink .vimrc by doing:
 
@@ -27,7 +27,7 @@ Some plugins will require some extra configuration.
 * `make`
 
 #### For TagBar:
-In `vimrc` confirm that `g:tagbar_ctags_bin` points to exuberant ctags on the
+In `Dot-Files/Vim/vimrc` confirm that `g:tagbar_ctags_bin` points to exuberant ctags on the
 system, or remove the current line if your ctags is in your PATH.
 
 ## git
@@ -44,6 +44,10 @@ system, or remove the current line if your ctags is in your PATH.
 
     `ln -s ~/Dot-Files/zsh/zshrc ~/.zshrc`
 
+2. Symlink .oh-my-zsh by doing:
+
+    `ln -s ~/Dot-Files/zsh/oh-my-zsh ~/.oh-my-zsh`
+
 ### oh-my-zsh
 1. Initialize the submodules:
 
@@ -52,3 +56,17 @@ system, or remove the current line if your ctags is in your PATH.
 * Set Zsh as your default shell:
 
     `chsh -s /bin/zsh`
+
+#### Mac OS X
+
+If you have administrator privileges, you must fix an Apple misconfiguration
+in Mac OS X 10.7 Lion by renaming `/etc/zshenv` to `/etc/zprofile`, or Zsh will
+have the wrong `PATH` when executed non-interactively by scripts.
+
+#### Troubleshooting
+
+For real troubleshooting check [this](https://github.com/sorin-ionescu/oh-my-zsh#troubleshooting) out.
+
+#### Usage
+
+For oh-my-zsh usage instructions go [here](https://github.com/sorin-ionescu/oh-my-zsh#usage).
