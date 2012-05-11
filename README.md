@@ -1,9 +1,11 @@
 Install
 =======
-First clone the repository `git clone git://github.com/tulioz/Dot-Files.git`.
+First clone the repository
 
-## Vim
-1. Symlink .vim by doing
+    `git clone git://github.com/tulioz/Dot-Files.git`
+
+## vim
+1. Symlink .vim by doing:
 
     `ln -s ~/Dot-Files/Vim/ ~/.vim`
 
@@ -28,7 +30,7 @@ Some plugins will require some extra configuration.
 In `vimrc` confirm that `g:tagbar_ctags_bin` points to exuberant ctags on the
 system, or remove the current line if your ctags is in your PATH.
 
-## Git
+## git
 1. Symlink .gitignore_global by doing:
 
     `ln -s ~/Dot-Files/git/gitignore_global ~/.gitignore_global`
@@ -38,6 +40,10 @@ system, or remove the current line if your ctags is in your PATH.
     `git config --global core.excludesfile ~/.gitignore_global`
 
 ## zsh
+1. Symlink .zshrc by doing:
+
+    `ln -s ~/Dot-Files/zsh/zshrc ~/.zshrc`
+
 ### oh-my-zsh
 1. Initialize the submodules:
 
