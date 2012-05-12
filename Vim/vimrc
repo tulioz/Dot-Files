@@ -30,7 +30,11 @@ Bundle 'SuperTab-continued.'
 let g:SuperTabDefaultCompletionType = "context"
 
 Bundle 'Tagbar'
-let g:tagbar_ctags_bin='/usr/local/Cellar/ctags/5.8/bin/ctags'
+if has('mac')
+    let g:tagbar_ctags_bin='/usr/local/Cellar/ctags/5.8/bin/ctags'
+elseif has('unix')
+    let g:tagbar_ctags_bin='/usr/bin/ctags'
+endif
 nmap <F8> :TagbarToggle<CR> " Have F8 toggle the tagbar
 
 Bundle 'nathanaelkane/vim-indent-guides'
@@ -197,7 +201,11 @@ inoremap jj <ESC>
 noremap <leader>w <C-w>v<C-w>l
 
 if has('gui_running')
-    set guifont=Inconsolata:h13
+    if has('mac')
+        set guifont=Inconsolata:h13
+    elseif has('unix')
+
+    endif
 endif
 
 " Specific settings for file types
