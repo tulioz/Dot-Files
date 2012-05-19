@@ -48,18 +48,16 @@ system, or remove the current line if your ctags is in your PATH.
 
     `ln -s ~/Dot-Files/zsh/zshrc ~/.zshrc`
 
-2. Symlink .oh-my-zsh by doing:
+* Symlink .oh-my-zsh by doing:
 
     `ln -s ~/Dot-Files/zsh/oh-my-zsh ~/.oh-my-zsh`
 
 ### oh-my-zsh
-1. Initialize the submodules:
-
-    `cd ~/.oh-my-zsh && git submodule update --init --recursive`
-
-* Set Zsh as your default shell:
+1. Set Zsh as your default shell:
 
     `chsh -s /bin/zsh`
+
+You will have to open up a new terminal to see the changes, you might also have to log out and log back in.
 
 #### Mac OS X
 
