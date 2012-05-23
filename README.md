@@ -4,7 +4,7 @@ Install
 
     `git clone git://github.com/tulioz/Dot-Files.git ~/Dot-Files`
 
-* Next update all the submodules:
+2. Next update all the submodules:
 
     `cd ~/Dot-Files && git submodule update --init --recursive`
 
@@ -13,11 +13,11 @@ Install
 
     `ln -s ~/Dot-Files/Vim/vim ~/.vim`
 
-* Symlink .vimrc by doing:
+2. Symlink .vimrc by doing:
 
     `ln -s ~/Dot-Files/Vim/vimrc ~/.vimrc`
 
-* Once that is complete run Vim and type the following to install all the plugins:
+3. Once that is complete run Vim and type the following to install all the plugins:
 
     `:BundleInstall`
 
@@ -38,7 +38,7 @@ system, or remove the current line if your ctags is in your PATH.
 
     `ln -s ~/Dot-Files/git/gitignore_global ~/.gitignore_global`
 
-* Configure the global git ignore:
+2. Configure the global git ignore:
 
     `git config --global core.excludesfile ~/.gitignore_global`
 
@@ -47,7 +47,7 @@ system, or remove the current line if your ctags is in your PATH.
 
     `ln -s ~/Dot-Files/zsh/zshrc ~/.zshrc`
 
-* Symlink .oh-my-zsh by doing:
+2. Symlink .oh-my-zsh by doing:
 
     `ln -s ~/Dot-Files/zsh/oh-my-zsh ~/.oh-my-zsh`
 
@@ -76,12 +76,12 @@ zshrc comes with variables necessary for the use of virtualenvwrapper. To set up
 
 	`sudo easy_install pip`
 
-* Install virtualenv:
+2. Install virtualenv:
 
 	`sudo pip install virtualenv`
 
-* Install virtualenvwrapper:
+3. Install virtualenvwrapper:
 
 	`sudo pip install virtualenvwrapper`
 	
-* Ensure that ~/dev is created or change the PROJECT_HOME directory. This is done so that `mkproject` works properly.
+4. Ensure that ~/dev is created or change the PROJECT_HOME directory. This is done so that `mkproject` works properly.
