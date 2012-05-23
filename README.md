@@ -24,7 +24,6 @@ Install
 Some plugins will require some extra configuration.
 
 ### For Command-T:
-
 1. `cd ~/.vim/bundle/Command-T/ruby/command-t`
 * `rvm use system`
 * `ruby extconf.rb`
@@ -60,15 +59,29 @@ system, or remove the current line if your ctags is in your PATH.
 You will have to open up a new terminal to see the changes, you might also have to log out and log back in.
 
 #### Mac OS X
-
 If you have administrator privileges, you must fix an Apple misconfiguration
 in Mac OS X 10.7 Lion by renaming `/etc/zshenv` to `/etc/zprofile`, or Zsh will
 have the wrong `PATH` when executed non-interactively by scripts.
 
 #### Troubleshooting
-
 For real troubleshooting check [this](https://github.com/sorin-ionescu/oh-my-zsh#troubleshooting) out.
 
 #### Usage
-
 For oh-my-zsh usage instructions go [here](https://github.com/sorin-ionescu/oh-my-zsh#usage).
+
+### virtualenvwrapper
+zshrc comes with variables necessary for the use of virtualenvwrapper. To set up your full Python environment do the following:
+
+1. Install pip:
+
+	`sudo easy_install pip`
+
+* Install virtualenv:
+
+	`sudo pip install virtualenv`
+
+* Install virtualenvwrapper:
+
+	`sudo pip install virtualenvwrapper`
+	
+* Ensure that ~/dev is created or change the PROJECT_HOME directory. This is done so that `mkproject` works properly.
