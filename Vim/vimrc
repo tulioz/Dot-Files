@@ -8,23 +8,37 @@ endif
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle
-" required!
+" let Vundle manage Vundle required!
 Bundle 'gmarik/vundle'
 
-" My Bundles here:
+" File buffer/search plugin
 Bundle 'Command-T'
+
+" Adds menu options for plugins
 Bundle 'Headlights'
+
+" auto close quotes, parenthesis, etc.
 Bundle 'delimitMate.vim'
-Bundle 'closetag.vim'
-Bundle 'pyflakes.vim'
+
+" modify comments easily
 Bundle 'The-NERD-Commenter'
+
+" git integration
 Bundle 'fugitive.vim'
-"Bundle 'garbas/vim-showmarks'
-Bundle 'Lokaltog/vim-powerline'
+
+" Edit surrounding quotes, parenthesis
 Bundle 'surround.vim'
-Bundle 'Mustang2'
+
+" Colors
+"Bundle 'Mustang2'
+Bundle 'croaker/mustang-vim'
+
 Bundle 'Syntastic'
+Bundle 'ctrlp.vim'
+
+" fancy statusline
+Bundle 'Lokaltog/vim-powerline'
+let g:Powerline_symbols="unicode"
 
 Bundle 'SuperTab-continued.'
 let g:SuperTabDefaultCompletionType = "context"
@@ -35,12 +49,14 @@ if has('mac')
 elseif has('unix')
     let g:tagbar_ctags_bin='/usr/bin/ctags'
 endif
-nmap <F8> :TagbarToggle<CR> " Have F8 toggle the tagbar
+" Have F8 toggle the tagbar
+nmap <F8> :TagbarToggle<CR>
 
 Bundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
-nmap <F9> :IndentGuideToggle<CR> "Have F9 toggle the indent guide.
+" Have F9 toggle the indent guide.
+nmap <F9> :IndentGuidesToggle<CR>
 
 "SnipMate
 "Install dependencies:
@@ -220,3 +236,7 @@ endfunction
 
 " on save, make file executable if has shebang line with '/bin/'
 au BufWritePost * if getline(1) =~ "^#!/bin/" | :call MakeExecutable() | endif
+
+" reselect line after indent
+vnoremap < <gv
+vnoremap > >gv
