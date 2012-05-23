@@ -53,3 +53,7 @@ else
 fi
 
 PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin:$EC2_HOME/bin # Add RVM to PATH for scripting
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/dev
+source /usr/local/bin/virtualenvwrapper.sh
