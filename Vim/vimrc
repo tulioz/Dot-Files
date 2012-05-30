@@ -33,6 +33,13 @@ Bundle 'surround.vim'
 "Bundle 'Mustang2'
 Bundle 'croaker/mustang-vim'
 
+" Add syntax highlighting for vim
+Bundle 'applescript.vim'
+
+" Revision history for file in vim
+Bundle 'Gundo'
+nnoremap <F5> :GundoToggle<CR>
+
 Bundle 'Syntastic'
 Bundle 'ctrlp.vim'
 
@@ -145,6 +152,9 @@ set mouse=a                                     "Allow mouse features
 set pastetoggle=<F2>                            "No autoindent in paste mode
 set gdefault                                    "Defaults to /g for switch
 
+set foldmethod=indent
+set foldlevel=99
+
 "always show line numbers, but only in current window
 set number
 :au WinEnter * :setlocal number
@@ -240,3 +250,15 @@ au BufWritePost * if getline(1) =~ "^#!/bin/" | :call MakeExecutable() | endif
 " reselect line after indent
 vnoremap < <gv
 vnoremap > >gv
+
+" Add the virtualenv's site-packages to vim path
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF

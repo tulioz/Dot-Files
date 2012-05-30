@@ -147,3 +147,7 @@ pip-log.txt
 *.pot
 *.pyc
 local_settings.py
+
+# IdeaJ #
+#########
+.idea
