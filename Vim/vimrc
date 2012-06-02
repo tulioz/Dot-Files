@@ -30,8 +30,8 @@ Bundle 'fugitive.vim'
 Bundle 'surround.vim'
 
 " Colors
-"Bundle 'Mustang2'
 Bundle 'croaker/mustang-vim'
+Bundle 'tomasr/molokai'
 
 " Add syntax highlighting for vim
 Bundle 'applescript.vim'
@@ -49,6 +49,8 @@ let g:Powerline_symbols="unicode"
 
 Bundle 'SuperTab-continued.'
 let g:SuperTabDefaultCompletionType = "context"
+
+Bundle 'skammer/vim-css-color'
 
 Bundle 'Tagbar'
 if has('mac')
@@ -167,7 +169,8 @@ set number
 syntax on " switch syntax highlight on
 
 if &t_Co >= 256 || has("gui_running")
-  colorscheme mustang
+  "colorscheme Mustang
+  colorscheme molokai
 endif
 
 nnoremap ; :
