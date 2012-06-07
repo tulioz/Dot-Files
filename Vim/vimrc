@@ -1,6 +1,9 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
+" change mapleader from \ to ,
+let mapleader=","
+
 if !isdirectory(expand(expand("~/.vim/bundle/vundle/.git")))
     !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
 endif
@@ -12,7 +15,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " File buffer/search plugin
-Bundle 'Command-T'
+"Bundle 'Command-T'
 
 " Adds menu options for plugins
 Bundle 'Headlights'
@@ -39,9 +42,17 @@ Bundle 'applescript.vim'
 " Revision history for file in vim
 Bundle 'Gundo'
 nnoremap <F5> :GundoToggle<CR>
+nnoremap <leader>g :GundoToggle<CR>
 
 Bundle 'Syntastic'
+
+" add vim support for puppet
+Bundle 'rodjek/vim-puppet'
+
+" File/buffer search plugin, replaces Command-T
 Bundle 'ctrlp.vim'
+nmap <silent> <leader>t :CtrlP<CR>
+nmap <silent> <leader>b :CtrlPBuffer<CR>
 
 " fancy statusline
 Bundle 'Lokaltog/vim-powerline'
@@ -86,9 +97,6 @@ filetype plugin indent on     " required!
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed.
-
-" change mapleader from \ to ,
-let mapleader=","
 
 " Quickly edit/reload the vimrc file
 " ev to edit, sv to source
@@ -240,8 +248,7 @@ endif
 
 " Specific settings for file types
 autocmd FileType ruby set tabstop=2|set shiftwidth=2|set softtabstop=2
-autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+au BufRead,BufNewFile Vagrantfile set filetype=ruby
 
 function! MakeExecutable()
   silent !chmod a+x %
