@@ -39,6 +39,9 @@ Bundle 'tomasr/molokai'
 " Add syntax highlighting for vim
 Bundle 'applescript.vim'
 
+" Rope integration for python refactoring
+"Bundle 'sontek/rope-vim'
+
 " Revision history for file in vim
 Bundle 'Gundo'
 nnoremap <F5> :GundoToggle<CR>
