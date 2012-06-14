@@ -59,14 +59,14 @@ nmap <silent> <leader>b :CtrlPBuffer<CR>
 
 " fancy statusline
 Bundle 'Lokaltog/vim-powerline'
-"let g:Powerline_symbols="unicode"
+let g:Powerline_symbols="unicode"
 
 Bundle 'SuperTab-continued.'
 let g:SuperTabDefaultCompletionType = "context"
 
 Bundle 'skammer/vim-css-color'
 
-Bundle 'Tagbar'
+Bundle 'majutsushi/tagbar'
 if has('mac')
     let g:tagbar_ctags_bin='/usr/local/Cellar/ctags/5.8/bin/ctags'
 elseif has('unix')
