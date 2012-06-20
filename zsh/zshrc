@@ -65,6 +65,12 @@ else
     echo "private_vars.zsh not found"
 fi
 
+if [[ $OSTYPE == darwin* ]] then
+    export EDITOR='mvim -f'
+elif [[ $OSTYPE == linux-gnu ]] then
+    export EDITOR='gvim -f'
+fi
+
 PATH=/usr/local/bin:/usr/local/sbin:$PATH:$HOME/.rvm/bin:$EC2_HOME/bin # Add RVM to PATH for scripting
 
 export WORKON_HOME=$HOME/.virtualenvs
