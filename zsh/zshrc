@@ -44,8 +44,13 @@ zstyle ':omz:load' omodule \
     'history-substring-search' \
     'rsync' \
     'syntax-highlighting' \
-    'ruby'
+    'ruby' \
+    'tmux' \
+    'screen'
 
+# Automatically start tmux/screen on shell start
+#zstyle ':omz:module:tmux' auto-start 'yes'
+#zstyle ':omz:module:screen' auto-start 'yes'
 
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
@@ -60,7 +65,7 @@ source "$OMZ/init.zsh"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 if [[ -a ~/private_vars.zsh ]]; then
-    source "private_vars.zsh"
+    source ~/private_vars.zsh
 else
     echo "private_vars.zsh not found"
 fi
