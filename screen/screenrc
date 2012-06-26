@@ -1,0 +1,15 @@
+startup_message off
+
+# if we accidentally hangup, don't be all attached when we come back
+autodetach on
+
+# more scrollback
+defscrollback 10000
+
+# for RVM
+shell -${SHELL}
+
+shelltitle "$ |zsh"
+
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
