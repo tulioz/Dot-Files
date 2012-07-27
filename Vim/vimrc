@@ -42,6 +42,17 @@ Bundle 'applescript.vim'
 " Rope integration for python refactoring
 "Bundle 'sontek/rope-vim'
 
+"" Vim autocomplete
+"Bundle 'Shougo/neocomplcache'
+"" Use neocomplcache.
+"let g:neocomplcache_enable_at_startup = 1
+"let g:neocomplcache_enable_auto_select = 1
+"let g:neocomplcache_snippets_dir='~/.vim/bundle/snipmate-snippets/snippets'
+"" Recommended key-mappings. 
+"" <C-h>, <BS>: close popup and delete backword char. 
+"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>" 
+
+
 " Revision history for file in vim
 Bundle 'Gundo'
 nnoremap <F5> :GundoToggle<CR>
