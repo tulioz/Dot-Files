@@ -35,6 +35,7 @@ Bundle 'surround.vim'
 " Colors
 Bundle 'croaker/mustang-vim'
 Bundle 'tomasr/molokai'
+Bundle 'nanotech/jellybeans.vim'
 
 " Add syntax highlighting for vim
 Bundle 'applescript.vim'
@@ -146,6 +147,7 @@ set ttyfast
 set ruler "Show information on vim bottom
 set laststatus=2
 set undofile
+set fillchars=vert:\│    " that's a vertical box-drawing character
 
 set history=1000    "remember more commands and search history
 set undolevels=1000 "use many levels of undo
@@ -192,7 +194,8 @@ syntax on " switch syntax highlight on
 
 if &t_Co >= 256 || has("gui_running")
   "colorscheme Mustang
-  colorscheme molokai
+  "colorscheme molokai
+  colorscheme jellybeans
 endif
 
 nnoremap ; :
