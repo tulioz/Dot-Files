@@ -41,7 +41,7 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'applescript.vim'
 
 " Rope integration for python refactoring
-"Bundle 'sontek/rope-vim'
+Bundle 'sontek/rope-vim'
 
 "" Vim autocomplete
 "Bundle 'Shougo/neocomplcache'
@@ -59,6 +59,7 @@ Bundle 'Gundo'
 nnoremap <F5> :GundoToggle<CR>
 nnoremap <leader>g :GundoToggle<CR>
 
+" Code analysis (lint, etc.)
 Bundle 'Syntastic'
 
 " add vim support for puppet

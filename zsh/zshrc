@@ -76,8 +76,11 @@ elif [[ $OSTYPE == linux-gnu ]] then
     export EDITOR='gvim -f'
 fi
 
-PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH:$HOME/.rvm/bin:$EC2_HOME/bin # Add RVM to PATH for scripting
+export NODE_PATH="/usr/local/lib/node"
+
+PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH:$HOME/.rvm/bin:$EC2_HOME/bin:/usr/local/share/npm/bin # Add RVM to PATH for scripting
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/dev
-source /usr/local/bin/virtualenvwrapper.sh
+#source /usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
