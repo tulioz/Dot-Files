@@ -66,7 +66,7 @@ system, or remove the current line if your ctags is in your PATH.
 ## zsh with prezto
 1. Symlink .prezto by doing:
 
-    `ln -s ~/Dot-Files/zsh/prezto ~/.prezto`
+    `ln -s ~/Dot-Files/zsh/prezto ~/.zprezto`
 
 2. Launch zsh:
 
@@ -77,13 +77,17 @@ system, or remove the current line if your ctags is in your PATH.
     ```
     setopt EXTENDED_GLOB
     for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-        ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+        ln -fs "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
     done
     ```
 
 4. Symlink in zshrc:
 
     `ln -fs ~/Dot-Files/zsh/preztozshrc ~/.zshrc`
+
+5. Symlink in zpreztorc:
+
+    `ln -fs ~/Dot-Files/zsh/zpreztorc ~/.zpreztorc`
 
 ### oh-my-zsh
 1. Set Zsh as your default shell:
