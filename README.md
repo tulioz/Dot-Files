@@ -54,6 +54,7 @@ system, or remove the current line if your ctags is in your PATH.
 
     `git config --global user.email "your_email@youremail.com"`
 
+<del>
 ## zsh
 1. Symlink .zshrc by doing:
 
@@ -62,6 +63,7 @@ system, or remove the current line if your ctags is in your PATH.
 2. Symlink .oh-my-zsh by doing:
 
     `ln -s ~/Dot-Files/zsh/oh-my-zsh ~/.oh-my-zsh`
+</del>
 
 ## zsh with prezto
 1. Symlink .prezto by doing:
