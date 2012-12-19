@@ -54,8 +54,7 @@ system, or remove the current line if your ctags is in your PATH.
 
     `git config --global user.email "your_email@youremail.com"`
 
-## ~~zsh~~ Deprecated
-<del>
+## ~~zsh~~
 1. Symlink .zshrc by doing:
 
     `ln -s ~/Dot-Files/zsh/zshrc ~/.zshrc`
@@ -63,7 +62,6 @@ system, or remove the current line if your ctags is in your PATH.
 2. Symlink .oh-my-zsh by doing:
 
     `ln -s ~/Dot-Files/zsh/oh-my-zsh ~/.oh-my-zsh`
-</del>
 
 ## zsh with prezto
 1. Symlink .prezto by doing:
@@ -76,10 +74,12 @@ system, or remove the current line if your ctags is in your PATH.
 
 3. Run the following lines:
 
+```
     setopt EXTENDED_GLOB
     for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
         ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
     done
+```
 
 4. Symlink in zshrc:
 
