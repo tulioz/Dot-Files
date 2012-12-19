@@ -54,8 +54,8 @@ system, or remove the current line if your ctags is in your PATH.
 
     `git config --global user.email "your_email@youremail.com"`
 
+## ~~zsh~~ Deprecated
 <del>
-## zsh
 1. Symlink .zshrc by doing:
 
     `ln -s ~/Dot-Files/zsh/zshrc ~/.zshrc`
