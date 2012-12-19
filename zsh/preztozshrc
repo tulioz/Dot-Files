@@ -1,0 +1,43 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+
+# Load RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+# Source private vars for EC2, etc.
+if [[ -a ~/private_vars.zsh ]]; then
+    source ~/private_vars.zsh
+else
+    echo "private_vars.zsh not found"
+fi
+
+# default editor settings, different for Mac/Linux
+if [[ $OSTYPE == darwin* ]] then
+    export EDITOR='mvim -f'
+elif [[ $OSTYPE == linux-gnu ]] then
+    export EDITOR='gvim -f'
+fi
+
+# node.js
+export NODE_PATH="/usr/local/lib/node"
+
+# Add RVM, ec2, homebrew related stuff to PATH
+PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH
+PATH=$PATH:$HOME/.rvm/bin:$EC2_HOME/bin:/usr/local/share/npm/bin
+
+# Virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/dev
+#source /usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
