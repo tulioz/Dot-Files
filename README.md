@@ -127,3 +127,7 @@ zshrc comes with variables necessary for the use of virtualenvwrapper. To set up
     `sudo pip install virtualenvwrapper`
 
 4. Ensure that ~/dev is created or change the PROJECT_HOME directory. This is done so that `mkproject` works properly.
+
+### Powerline
+To use Powerline properly you'll need to install Inconsolata for Powerline,
+follow instructions on how to do so [here](https://powerline.readthedocs.org/en/latest/fontpatching.html).
