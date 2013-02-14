@@ -18,19 +18,19 @@ Bundle 'gmarik/vundle'
 "Bundle 'Command-T'
 
 " Adds menu options for plugins
-Bundle 'Headlights'
+Bundle 'mbadran/headlights'
 
 " auto close quotes, parenthesis, etc.
-Bundle 'delimitMate.vim'
+Bundle 'Raimondi/delimitMate'
 
 " modify comments easily
-Bundle 'The-NERD-Commenter'
+Bundle 'scrooloose/nerdcommenter'
 
 " git integration
-Bundle 'fugitive.vim'
+Bundle 'tpope/vim-fugitive'
 
 " Edit surrounding quotes, parenthesis
-Bundle 'surround.vim'
+Bundle 'tpope/vim-surround'
 
 " Colors
 Bundle 'croaker/mustang-vim'
@@ -55,18 +55,18 @@ Bundle 'sontek/rope-vim'
 
 
 " Revision history for file in vim
-Bundle 'Gundo'
+Bundle 'sjl/gundo.vim.git'
 nnoremap <F5> :GundoToggle<CR>
 nnoremap <leader>g :GundoToggle<CR>
 
 " Code analysis (lint, etc.)
-Bundle 'Syntastic'
+Bundle 'scrooloose/syntastic'
 
 " add vim support for puppet
 Bundle 'rodjek/vim-puppet'
 
 " File/buffer search plugin, replaces Command-T
-Bundle 'ctrlp.vim'
+Bundle 'kien/ctrlp.vim'
 nmap <silent> <leader>t :CtrlP<CR>
 nmap <silent> <leader>b :CtrlPBuffer<CR>
 
@@ -74,7 +74,7 @@ nmap <silent> <leader>b :CtrlPBuffer<CR>
 Bundle 'Lokaltog/vim-powerline'
 let g:Powerline_symbols="unicode"
 
-Bundle 'SuperTab-continued.'
+Bundle 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
 
 Bundle 'skammer/vim-css-color'
@@ -96,11 +96,16 @@ nmap <F9> :IndentGuidesToggle<CR>
 
 "SnipMate
 "Install dependencies:
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/snipmate-snippets"
+"Bundle "MarcWeber/vim-addon-mw-utils"
+"Bundle "tomtom/tlib_vim"
+"Bundle "honza/snipmate-snippets"
 "Install
-Bundle "garbas/vim-snipmate"
+"Bundle "garbas/vim-snipmate"
+
+"UltiSnips
+Bundle "SirVer/ultisnips"
+Bundle "aalvarado/ultisnips-snippets"
+let g:UltiSnipsSnippetsDir='~/.vim/bundle/ultisnips-snippets'
 
 
 filetype plugin indent on     " required!
@@ -266,6 +271,7 @@ endif
 
 " Specific settings for file types
 autocmd FileType ruby set tabstop=2|set shiftwidth=2|set softtabstop=2
+autocmd FileType php setlocal noexpandtab|set listchars=tab:>-,trail:·
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
 
 function! MakeExecutable()

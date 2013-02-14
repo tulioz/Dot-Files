@@ -54,6 +54,10 @@ system, or remove the current line if your ctags is in your PATH.
 
     `git config --global user.email "your_email@youremail.com"`
 
+6. Default to git merege --no-ff
+
+    `git config --global merge.ff no`
+
 ## ~~zsh~~
 1. Symlink .zshrc by doing:
 

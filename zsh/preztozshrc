@@ -25,8 +25,10 @@ fi
 # default editor settings, different for Mac/Linux
 if [[ $OSTYPE == darwin* ]] then
     export EDITOR='mvim -f'
+    export VISUAL='mvim -f'
 elif [[ $OSTYPE == linux-gnu ]] then
     export EDITOR='gvim -f'
+    export VISUAL='gvim -f'
 fi
 
 # node.js
