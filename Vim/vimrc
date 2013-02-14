@@ -71,8 +71,10 @@ nmap <silent> <leader>t :CtrlP<CR>
 nmap <silent> <leader>b :CtrlPBuffer<CR>
 
 " fancy statusline
-Bundle 'Lokaltog/vim-powerline'
-let g:Powerline_symbols="unicode"
+"Bundle 'Lokaltog/vim-powerline'
+"let g:Powerline_symbols="unicode"
+Bundle 'Lokaltog/powerline'
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 Bundle 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
@@ -106,6 +108,12 @@ nmap <F9> :IndentGuidesToggle<CR>
 Bundle "SirVer/ultisnips"
 Bundle "aalvarado/ultisnips-snippets"
 let g:UltiSnipsSnippetsDir='~/.vim/bundle/ultisnips-snippets'
+
+"Gist.vim, allows editing of github gists easily
+Bundle "mattn/gist-vim"
+
+"vim-endwise, add end's where needed in Ruby
+Bundle "tpope/vim-endwise"
 
 
 filetype plugin indent on     " required!
@@ -160,6 +168,7 @@ set undolevels=1000 "use many levels of undo
 set title           " change terminal's title
 set visualbell      " don't beep
 set noerrorbells    " don't beep
+set noshowmode      " Hide teh default mode text (e.g. --INSERT -- )
 
 set completeopt=menuone,longest,preview
 
@@ -263,9 +272,9 @@ noremap <leader>w <C-w>v<C-w>l
 
 if has('gui_running')
     if has('mac')
-        set guifont=Inconsolata:h13
+        set guifont=Inconsolata\ for\ Powerline:h13
     elseif has('unix')
-        set guifont=Inconsolata\ 13
+        set guifont=Inconsolata\ for\ Powerline\ 13
     endif
 endif
 
