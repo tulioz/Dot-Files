@@ -108,7 +108,7 @@ nmap <F9> :IndentGuidesToggle<CR>
 Bundle "SirVer/ultisnips"
 Bundle "aalvarado/ultisnips-snippets"
 let g:UltiSnipsSnippetsDir='~/.vim/bundle/ultisnips-snippets'
-let g:UltiSnipsExpandTrigger="<enter>"
+let g:UltiSnipsExpandTrigger="<c-j>"
 
 "Gist.vim, allows editing of github gists easily
 Bundle "mattn/gist-vim"
