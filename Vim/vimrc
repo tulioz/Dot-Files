@@ -76,8 +76,8 @@ nmap <silent> <leader>b :CtrlPBuffer<CR>
 Bundle 'Lokaltog/powerline'
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
-Bundle 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = "context"
+"Bundle 'ervandew/supertab'
+"let g:SuperTabDefaultCompletionType = "context"
 
 Bundle 'skammer/vim-css-color'
 
@@ -108,12 +108,16 @@ nmap <F9> :IndentGuidesToggle<CR>
 Bundle "SirVer/ultisnips"
 Bundle "aalvarado/ultisnips-snippets"
 let g:UltiSnipsSnippetsDir='~/.vim/bundle/ultisnips-snippets'
+let g:UltiSnipsExpandTrigger="<enter>"
 
 "Gist.vim, allows editing of github gists easily
 Bundle "mattn/gist-vim"
 
 "vim-endwise, add end's where needed in Ruby
 Bundle "tpope/vim-endwise"
+
+"autocomplete
+Bundle "Valloric/YouCompleteMe"
 
 
 filetype plugin indent on     " required!
@@ -230,8 +234,8 @@ cmap w!! %!sudo tee > /dev/null %
 nnoremap / /\v
 vnoremap / /\v
 
-nnoremap <tab> %
-vnoremap <tab> %
+"nnoremap <tab> %
+"vnoremap <tab> %
 
 set textwidth=79
 set formatoptions=qrn1
@@ -281,6 +285,7 @@ endif
 " Specific settings for file types
 autocmd FileType ruby set tabstop=2|set shiftwidth=2|set softtabstop=2
 autocmd FileType php setlocal noexpandtab|set listchars=tab:>-,trail:·
+au FileType python let b:delimitMate_nesting_quotes = ['"']
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
 
 function! MakeExecutable()
