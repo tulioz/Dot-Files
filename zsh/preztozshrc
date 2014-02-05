@@ -35,11 +35,34 @@ fi
 export NODE_PATH="/usr/local/lib/node"
 
 # Add RVM, ec2, homebrew related stuff to PATH
-PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH
-PATH=$PATH:$HOME/.rvm/bin:$EC2_HOME/bin:/usr/local/share/npm/bin
+#PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH
+PATH=/usr/local/bin:/usr/local/sbin:$PATH
+PATH=$PATH:$HOME/.rvm/bin:$EC2_HOME/bin
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/dev
 #source /usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper_lazy.sh
+
+export MARKPATH=$HOME/.marks
+function jump { 
+    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+function mark { 
+    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+function unmark { 
+    rm -i "$MARKPATH/$1"
+}
+
+function marks {
+    \ls -l "$MARKPATH" | tail -n +2 | sed 's/  / /g' | cut -d' ' -f9- | awk -F ' -> ' '{printf "%-10s -> %s\n", $1, $2}'
+}
+
+function _completemarks {
+  reply=($(ls $MARKPATH))
+}
+
+compctl -K _completemarks jump
+compctl -K _completemarks unmark

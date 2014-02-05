@@ -61,6 +61,8 @@ nnoremap <leader>g :GundoToggle<CR>
 
 " Code analysis (lint, etc.)
 Bundle 'scrooloose/syntastic'
+"let g:syntastic_python_checkers=['pylint', 'flake8']
+let g:syntastic_python_checkers=['flake8']
 
 " add vim support for puppet
 Bundle 'rodjek/vim-puppet'
@@ -100,7 +102,7 @@ nmap <F9> :IndentGuidesToggle<CR>
 "Install dependencies:
 "Bundle "MarcWeber/vim-addon-mw-utils"
 "Bundle "tomtom/tlib_vim"
-"Bundle "honza/snipmate-snippets"
+"Bundle "honza/vim-snippets"
 "Install
 "Bundle "garbas/vim-snipmate"
 
@@ -118,6 +120,14 @@ Bundle "tpope/vim-endwise"
 
 "autocomplete
 Bundle "Valloric/YouCompleteMe"
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+
+"match html tags
+Bundle "Valloric/MatchTagAlways"
+
+"move around easily
+Bundle "Lokaltog/vim-easymotion"
+
 
 
 filetype plugin indent on     " required!
