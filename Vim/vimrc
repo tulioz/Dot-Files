@@ -120,7 +120,7 @@ Bundle "tpope/vim-endwise"
 
 "autocomplete
 Bundle "Valloric/YouCompleteMe"
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+" let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
 "match html tags
 Bundle "Valloric/MatchTagAlways"

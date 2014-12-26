@@ -15,8 +15,6 @@ Install
 4. Create ~/dev directory:
 
     `mkdir ~/dev`
-
-5. Grab iTerm 2 [here](http://iterm2.com/)
     
 ## brew
 1. Brew install key tools
@@ -43,7 +41,11 @@ Install
 
 Some plugins will require some extra configuration.
 
-### For TagBar:
+### [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+`cd ~/.vim/bundle/YouCompleteMe
+./install.sh`
+
+### TagBar
 In `Dot-Files/Vim/vimrc` confirm that `g:tagbar_ctags_bin` points to exuberant ctags on the
 system, or remove the current line if your ctags is in your PATH.
 
@@ -120,3 +122,33 @@ Or on OSX simply double click the .otf file.
 1. Generate and store ssh key for github
 
     `https://help.github.com/articles/generating-ssh-keys/`
+    
+## List of Mac Apps
+
+### App Store
+* Textual
+* Caffeine
+* The Unarchiver
+* Dash
+* SourceTree
+* Xcode
+* Growl
+* HardwareGrowler
+* Kaleidoscope (don't currently have)
+* Reeder 2
+
+### Non-App Store
+* [iterm 2](http://iterm2.com/)
+* f.lux
+* Tower
+* Dropbox
+* Chrome
+* Firefox
+* PyCharm
+* TotalFinder
+* Alfred
+* Divv
+* ClipMenu
+* Bartender
+* Pandabar
+* Office Suite (maybe)

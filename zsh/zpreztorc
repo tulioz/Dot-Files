@@ -39,7 +39,10 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'ruby' \
   'tmux' \
-  'screen'
+  'screen' \
+  'python' \
+  'osx' \
+  'homebrew'
 
 #
 # Editor
