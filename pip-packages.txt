@@ -1,0 +1,4 @@
+virtualenv
+virtualenvwrapper
+requests
+ipython

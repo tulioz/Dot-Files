@@ -11,11 +11,22 @@ Install
 3. Install Homebrew:
 
     `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+4. Create ~/dev directory:
+
+    `mkdir ~/dev`
+
+5. Grab iTerm 2 [here](http://iterm2.com/)
     
 ## brew
 1. Brew install key tools
 
-    `brew install $(<brew-packages.txt)`
+    `brew install $(<~/Dot-Files/brew-packages.txt)`
+    
+## python packages
+1. pip install important global packages
+
+    `sudo pip install -r ~/Dot-Files/pip-packages.txt`
 
 ## vim
 1. Symlink .vim by doing:
@@ -94,34 +105,18 @@ system, or remove the current line if your ctags is in your PATH.
 
 You will have to open up a new terminal to see the changes, you might also have to log out and log back in.
 
-#### Mac OS X
-If you have administrator privileges, you must fix an Apple misconfiguration
-in Mac OS X 10.7 Lion by renaming `/etc/zshenv` to `/etc/zprofile`, or Zsh will
-have the wrong `PATH` when executed non-interactively by scripts.
-
 #### Troubleshooting
 For real troubleshooting check [this](https://github.com/sorin-ionescu/prezto#troubleshooting) out.
 
 #### Usage
-For oh-my-zsh usage instructions go [here](https://github.com/sorin-ionescu/prezto#usage).
-
-### virtualenvwrapper
-zshrc comes with variables necessary for the use of virtualenvwrapper. To set up your full Python environment do the following:
-
-1. Install pip:
-
-    `sudo easy_install pip`
-
-2. Install virtualenv:
-
-    `sudo pip install virtualenv`
-
-3. Install virtualenvwrapper:
-
-    `sudo pip install virtualenvwrapper`
-
-4. Ensure that ~/dev is created or change the PROJECT_HOME directory. This is done so that `mkproject` works properly.
+For prezto usage instructions go [here](https://github.com/sorin-ionescu/prezto#usage).
 
 ### Powerline
 To use Powerline properly you'll need to install Inconsolata for Powerline,
 follow instructions on how to do so [here](https://powerline.readthedocs.org/en/master/installation.html#patched-fonts).
+Or on OSX simply double click the .otf file.
+
+## Set Up github
+1. Generate and store ssh key for github
+
+    `https://help.github.com/articles/generating-ssh-keys/`
