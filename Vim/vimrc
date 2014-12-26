@@ -41,7 +41,7 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'applescript.vim'
 
 " Rope integration for python refactoring
-Bundle 'sontek/rope-vim'
+Bundle 'python-rope/ropevim'
 
 "" Vim autocomplete
 "Bundle 'Shougo/neocomplcache'

@@ -8,6 +8,15 @@ Install
 
     `cd ~/Dot-Files && git submodule update --init --recursive`
 
+3. Install Homebrew:
+
+    `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+    
+## brew
+1. Brew install key tools
+
+    `brew install $(<brew-packages.txt)`
+
 ## vim
 1. Symlink .vim by doing:
 
@@ -22,12 +31,6 @@ Install
     `:BundleInstall`
 
 Some plugins will require some extra configuration.
-
-### For Command-T:
-1. `cd ~/.vim/bundle/Command-T/ruby/command-t`
-* `rvm use system`
-* `ruby extconf.rb`
-* `make`
 
 ### For TagBar:
 In `Dot-Files/Vim/vimrc` confirm that `g:tagbar_ctags_bin` points to exuberant ctags on the
@@ -58,14 +61,6 @@ system, or remove the current line if your ctags is in your PATH.
 
     `git config --global merge.ff no`
 
-## ~~zsh~~
-1. Symlink .zshrc by doing:
-
-    `ln -s ~/Dot-Files/zsh/zshrc ~/.zshrc`
-
-2. Symlink .oh-my-zsh by doing:
-
-    `ln -s ~/Dot-Files/zsh/oh-my-zsh ~/.oh-my-zsh`
 
 ## zsh with prezto
 1. Symlink .prezto by doing:
@@ -81,7 +76,7 @@ system, or remove the current line if your ctags is in your PATH.
     ```
     setopt EXTENDED_GLOB
     for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-        ln -fs "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+        ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
     done
     ```
 
@@ -93,8 +88,7 @@ system, or remove the current line if your ctags is in your PATH.
 
     `ln -fs ~/Dot-Files/zsh/zpreztorc ~/.zpreztorc`
 
-### oh-my-zsh
-1. Set Zsh as your default shell:
+6. Set Zsh as your default shell:
 
     `chsh -s /bin/zsh`
 
@@ -106,10 +100,10 @@ in Mac OS X 10.7 Lion by renaming `/etc/zshenv` to `/etc/zprofile`, or Zsh will
 have the wrong `PATH` when executed non-interactively by scripts.
 
 #### Troubleshooting
-For real troubleshooting check [this](https://github.com/sorin-ionescu/oh-my-zsh#troubleshooting) out.
+For real troubleshooting check [this](https://github.com/sorin-ionescu/prezto#troubleshooting) out.
 
 #### Usage
-For oh-my-zsh usage instructions go [here](https://github.com/sorin-ionescu/oh-my-zsh#usage).
+For oh-my-zsh usage instructions go [here](https://github.com/sorin-ionescu/prezto#usage).
 
 ### virtualenvwrapper
 zshrc comes with variables necessary for the use of virtualenvwrapper. To set up your full Python environment do the following:
@@ -130,4 +124,4 @@ zshrc comes with variables necessary for the use of virtualenvwrapper. To set up
 
 ### Powerline
 To use Powerline properly you'll need to install Inconsolata for Powerline,
-follow instructions on how to do so [here](https://powerline.readthedocs.org/en/latest/fontpatching.html).
+follow instructions on how to do so [here](https://powerline.readthedocs.org/en/master/installation.html#patched-fonts).
