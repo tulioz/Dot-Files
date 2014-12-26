@@ -14,9 +14,6 @@ call vundle#rc()
 " let Vundle manage Vundle required!
 Bundle 'gmarik/vundle'
 
-" File buffer/search plugin
-"Bundle 'Command-T'
-
 " Adds menu options for plugins
 Bundle 'mbadran/headlights'
 
@@ -43,17 +40,6 @@ Bundle 'applescript.vim'
 " Rope integration for python refactoring
 Bundle 'python-rope/ropevim'
 
-"" Vim autocomplete
-"Bundle 'Shougo/neocomplcache'
-"" Use neocomplcache.
-"let g:neocomplcache_enable_at_startup = 1
-"let g:neocomplcache_enable_auto_select = 1
-"let g:neocomplcache_snippets_dir='~/.vim/bundle/snipmate-snippets/snippets'
-"" Recommended key-mappings. 
-"" <C-h>, <BS>: close popup and delete backword char. 
-"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>" 
-
-
 " Revision history for file in vim
 Bundle 'sjl/gundo.vim.git'
 nnoremap <F5> :GundoToggle<CR>
@@ -62,7 +48,7 @@ nnoremap <leader>g :GundoToggle<CR>
 " Code analysis (lint, etc.)
 Bundle 'scrooloose/syntastic'
 "let g:syntastic_python_checkers=['pylint', 'flake8']
-let g:syntastic_python_checkers=['flake8']
+"let g:syntastic_python_checkers=['flake8']
 
 " add vim support for puppet
 Bundle 'rodjek/vim-puppet'
@@ -77,9 +63,6 @@ nmap <silent> <leader>b :CtrlPBuffer<CR>
 "let g:Powerline_symbols="unicode"
 Bundle 'Lokaltog/powerline'
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-
-"Bundle 'ervandew/supertab'
-"let g:SuperTabDefaultCompletionType = "context"
 
 Bundle 'skammer/vim-css-color'
 
@@ -98,14 +81,6 @@ let g:indent_guides_guide_size = 1
 " Have F9 toggle the indent guide.
 nmap <F9> :IndentGuidesToggle<CR>
 
-"SnipMate
-"Install dependencies:
-"Bundle "MarcWeber/vim-addon-mw-utils"
-"Bundle "tomtom/tlib_vim"
-"Bundle "honza/vim-snippets"
-"Install
-"Bundle "garbas/vim-snipmate"
-
 "UltiSnips
 Bundle "SirVer/ultisnips"
 Bundle "aalvarado/ultisnips-snippets"
@@ -120,7 +95,6 @@ Bundle "tpope/vim-endwise"
 
 "autocomplete
 Bundle "Valloric/YouCompleteMe"
-" let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
 "match html tags
 Bundle "Valloric/MatchTagAlways"
