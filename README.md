@@ -152,3 +152,4 @@ Or on OSX simply double click the .otf file.
 * Bartender
 * Pandabar
 * Office Suite (maybe)
+* Crashplan

@@ -4,3 +4,8 @@ macvim
 ctags
 node
 tmux
+zeromq
+pandoc
+Caskroom/cask/virtualbox
+Caskroom/cask/vagrant
+Caskroom/cask/vagrant-manager

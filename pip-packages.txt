@@ -2,3 +2,11 @@ virtualenv
 virtualenvwrapper
 requests
 ipython
+nose
+jinja2
+sphinx
+pyzmq
+pygments
+tornado
+readline
+powerline-status

@@ -4,69 +4,70 @@ filetype off                   " required!
 " change mapleader from \ to ,
 let mapleader=","
 
-if !isdirectory(expand(expand("~/.vim/bundle/vundle/.git")))
-    !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+if !isdirectory(expand(expand("~/.vim/bundle/Vundle.vim/.git")))
+    ""!git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    !git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+"set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle required!
-Bundle 'gmarik/vundle'
-
-" Adds menu options for plugins
-Bundle 'mbadran/headlights'
+Plugin 'gmarik/Vundle.vim'
 
 " auto close quotes, parenthesis, etc.
-Bundle 'Raimondi/delimitMate'
-
-" modify comments easily
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'Raimondi/delimitMate'
 
 " git integration
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 " Edit surrounding quotes, parenthesis
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
+
+" Proper '.' repats
+Plugin 'tpope/vim-repeat'
+
+"vim-endwise, add end's where needed in Ruby
+Plugin 'tpope/vim-endwise'
 
 " Colors
-Bundle 'croaker/mustang-vim'
-Bundle 'tomasr/molokai'
-Bundle 'nanotech/jellybeans.vim'
-
-" Add syntax highlighting for vim
-Bundle 'applescript.vim'
+Plugin 'croaker/mustang-vim'
+Plugin 'tomasr/molokai'
+Plugin 'nanotech/jellybeans.vim'
 
 " Rope integration for python refactoring
-Bundle 'python-rope/ropevim'
+" Plugin 'python-rope/ropevim'
 
 " Revision history for file in vim
-Bundle 'sjl/gundo.vim.git'
+Plugin 'sjl/gundo.vim.git'
 nnoremap <F5> :GundoToggle<CR>
 nnoremap <leader>g :GundoToggle<CR>
 
+" modify comments easily
+Plugin 'scrooloose/nerdcommenter'
+
 " Code analysis (lint, etc.)
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 "let g:syntastic_python_checkers=['pylint', 'flake8']
 "let g:syntastic_python_checkers=['flake8']
-
-" add vim support for puppet
-Bundle 'rodjek/vim-puppet'
+let g:syntastic_mode_map = {
+            \ "mode": "active",
+            \ "active_filetypes": [],
+            \ "passive_filetypes": ["python"] }
 
 " File/buffer search plugin, replaces Command-T
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 nmap <silent> <leader>t :CtrlP<CR>
 nmap <silent> <leader>b :CtrlPBuffer<CR>
 
 " fancy statusline
-"Bundle 'Lokaltog/vim-powerline'
-"let g:Powerline_symbols="unicode"
-Bundle 'Lokaltog/powerline'
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+Plugin 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
 
-Bundle 'skammer/vim-css-color'
+Plugin 'skammer/vim-css-color'
 
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 if has('mac')
     let g:tagbar_ctags_bin='/usr/local/Cellar/ctags/5.8/bin/ctags'
 elseif has('unix')
@@ -75,34 +76,47 @@ endif
 " Have F8 toggle the tagbar
 nmap <F8> :TagbarToggle<CR>
 
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 " Have F9 toggle the indent guide.
 nmap <F9> :IndentGuidesToggle<CR>
 
 "UltiSnips
-Bundle "SirVer/ultisnips"
-Bundle "aalvarado/ultisnips-snippets"
+Plugin 'SirVer/ultisnips'
+Plugin 'aalvarado/ultisnips-snippets'
 let g:UltiSnipsSnippetsDir='~/.vim/bundle/ultisnips-snippets'
 let g:UltiSnipsExpandTrigger="<c-j>"
 
 "Gist.vim, allows editing of github gists easily
-Bundle "mattn/gist-vim"
-
-"vim-endwise, add end's where needed in Ruby
-Bundle "tpope/vim-endwise"
+Plugin 'mattn/gist-vim'
 
 "autocomplete
-Bundle "Valloric/YouCompleteMe"
+Plugin 'Valloric/YouCompleteMe'
 
 "match html tags
-Bundle "Valloric/MatchTagAlways"
+Plugin 'Valloric/MatchTagAlways'
 
 "move around easily
-Bundle "Lokaltog/vim-easymotion"
+Plugin 'Lokaltog/vim-easymotion'
 
+"python mode
+Plugin 'klen/python-mode'
 
+"Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+"vim json
+Plugin 'elzr/vim-json'
+
+"coffeescript
+Plugin 'kchmck/vim-coffee-script'
+
+"yankring
+Plugin 'vim-scripts/YankRing.vim'
+
+call vundle#end()
 
 filetype plugin indent on     " required!
 "
@@ -278,19 +292,8 @@ endfunction
 
 " on save, make file executable if has shebang line with '/bin/'
 au BufWritePost * if getline(1) =~ "^#!/bin/" | :call MakeExecutable() | endif
+au BufWritePost * if getline(1) =~ "^#!/usr/bin/" | :call MakeExecutable() | endif
 
 " reselect line after indent
 vnoremap < <gv
 vnoremap > >gv
-
-" Add the virtualenv's site-packages to vim path
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
