@@ -24,7 +24,7 @@ Install
 ## python packages
 1. pip install important global packages
 
-    `sudo pip install -r ~/Dot-Files/pip-packages.txt`
+    `pip install -r ~/Dot-Files/pip-packages.txt`
 
 ## vim
 1. Symlink .vim by doing:
@@ -42,8 +42,7 @@ Install
 Some plugins will require some extra configuration.
 
 ### [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
-`cd ~/.vim/bundle/YouCompleteMe
-./install.sh`
+`cd ~/.vim/bundle/YouCompleteMe; ./install.sh`
 
 ### TagBar
 In `Dot-Files/Vim/vimrc` confirm that `g:tagbar_ctags_bin` points to exuberant ctags on the
@@ -147,7 +146,7 @@ Or on OSX simply double click the .otf file.
 * PyCharm
 * TotalFinder
 * Alfred
-* Divv
+* Divvy
 * ClipMenu
 * Bartender
 * Pandabar
