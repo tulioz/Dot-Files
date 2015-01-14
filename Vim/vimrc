@@ -63,7 +63,9 @@ nmap <silent> <leader>b :CtrlPBuffer<CR>
 
 " fancy statusline
 Plugin 'bling/vim-airline'
-let g:airline_powerline_fonts = 1
+if has('gui_running')
+    let g:airline_powerline_fonts = 1
+endif
 
 Plugin 'skammer/vim-css-color'
 
