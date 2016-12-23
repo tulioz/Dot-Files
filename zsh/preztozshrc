@@ -27,7 +27,7 @@ if [[ $OSTYPE == darwin* ]] then
     export EDITOR='mvim -f'
     export VISUAL='mvim -f'
 elif [[ $OSTYPE == linux-gnu ]] then
-    export EDITOR='gvim -f'
+    export EDITOR='vim -f'
     export VISUAL='gvim -f'
 fi
 
