@@ -1,54 +1,47 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
-
-" change mapleader from \ to ,
-let mapleader=","
-
-if !isdirectory(expand(expand("~/.vim/bundle/Vundle.vim/.git")))
-    ""!git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    !git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-"set rtp+=~/.vim/bundle/vundle/
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
+" Colors
+Plug 'croaker/mustang-vim'
+Plug 'tomasr/molokai'
+Plug 'nanotech/jellybeans.vim'
 
-" let Vundle manage Vundle required!
-Plugin 'gmarik/Vundle.vim'
+" Syntax
+Plug 'tpope/vim-git', { 'for': 'git' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'elzr/vim-json', { 'for': 'json' }
 
 " auto close quotes, parenthesis, etc.
-Plugin 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
+
+" Make tab handle all completions
+Plug 'ervandew/supertab'
+
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
 " git integration
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " Edit surrounding quotes, parenthesis
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " Proper '.' repats
-Plugin 'tpope/vim-repeat'
-
-"vim-endwise, add end's where needed in Ruby
-Plugin 'tpope/vim-endwise'
-
-" Colors
-Plugin 'croaker/mustang-vim'
-Plugin 'tomasr/molokai'
-Plugin 'nanotech/jellybeans.vim'
-
-" Rope integration for python refactoring
-" Plugin 'python-rope/ropevim'
+Plug 'tpope/vim-repeat'
 
 " Revision history for file in vim
-Plugin 'sjl/gundo.vim.git'
+Plug 'sjl/gundo.vim'
 nnoremap <F5> :GundoToggle<CR>
 nnoremap <leader>g :GundoToggle<CR>
 
 " modify comments easily
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
 " Code analysis (lint, etc.)
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic', {'for': 'python'}
 "let g:syntastic_python_checkers=['pylint', 'flake8']
 "let g:syntastic_python_checkers=['flake8']
 let g:syntastic_mode_map = {
@@ -57,7 +50,7 @@ let g:syntastic_mode_map = {
             \ "passive_filetypes": ["python"] }
 
 " File/buffer search plugin, replaces Command-T
-Plugin 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 nmap <silent> <leader>t :CtrlP<CR>
 nmap <silent> <leader>b :CtrlPBuffer<CR>
 
@@ -72,14 +65,14 @@ if executable('ag')
 endif
 
 " fancy statusline
-Plugin 'bling/vim-airline'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='jellybeans'
 if has('gui_running')
     let g:airline_powerline_fonts = 1
 endif
 
-Plugin 'skammer/vim-css-color'
-
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 if has('mac')
     let g:tagbar_ctags_bin='/usr/local/Cellar/ctags/5.8/bin/ctags'
 elseif has('unix')
@@ -88,58 +81,32 @@ endif
 " Have F8 toggle the tagbar
 nmap <F8> :TagbarToggle<CR>
 
-Plugin 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 " Have F9 toggle the indent guide.
 nmap <F9> :IndentGuidesToggle<CR>
 
 "UltiSnips
-Plugin 'SirVer/ultisnips'
-Plugin 'aalvarado/ultisnips-snippets'
-let g:UltiSnipsSnippetsDir='~/.vim/bundle/ultisnips-snippets'
-let g:UltiSnipsExpandTrigger="<c-j>"
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 "Gist.vim, allows editing of github gists easily
-Plugin 'mattn/gist-vim'
-
-"autocomplete
-Plugin 'Valloric/YouCompleteMe'
-
-"match html tags
-Plugin 'Valloric/MatchTagAlways'
+Plug 'mattn/gist-vim'
 
 "move around easily
-Plugin 'Lokaltog/vim-easymotion'
+Plug 'Lokaltog/vim-easymotion'
 
-"python mode
-Plugin 'klen/python-mode'
+Plug 'godlygeek/tabular'
 
-"Markdown
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+Plug 'vim-scripts/YankRing.vim'
 
-"vim json
-Plugin 'elzr/vim-json'
+Plug 'AndrewRadev/splitjoin.vim'
 
-"coffeescript
-Plugin 'kchmck/vim-coffee-script'
+call plug#end()
 
-"yankring
-Plugin 'vim-scripts/YankRing.vim'
-
-call vundle#end()
-
-filetype plugin indent on     " required!
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed.
+" change mapleader from \ to ,
+let mapleader=","
 
 " Quickly edit/reload the vimrc file
 " ev to edit, sv to source
@@ -147,7 +114,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 set modelines=0     "prevent security exploits
-set hidden          "open a new file with :e and just hide the old buffer
+set nohidden        "don't allow hidden buffers
 set nowrap          "don't wrap lines
 set tabstop=4       "a tab is four spaces
 set shiftwidth=4    "number of spaces to use for autoindenting
@@ -166,6 +133,8 @@ set smarttab        "insert tabs on the start of a line according to
 set hlsearch        "highlight search terms
 set incsearch       "show search matches as you type
 set guioptions-=T   " No toolbar
+set shortmess+=I    " No welcome screen
+set shortmess+=A    " No .swp warning
 set encoding=utf-8
 set scrolloff=3     " start scrolling before cursor hits end
 set showmode
@@ -218,8 +187,6 @@ set number
 " Automatically resize vertical splits.
 :au WinEnter * :set winfixheight
 :au WinEnter * :wincmd =
-
-syntax on " switch syntax highlight on
 
 if &t_Co >= 256 || has("gui_running")
   "colorscheme Mustang
@@ -294,7 +261,6 @@ endif
 
 " Specific settings for file types
 autocmd FileType ruby set tabstop=2|set shiftwidth=2|set softtabstop=2
-autocmd FileType php setlocal noexpandtab|set listchars=tab:>-,trail:·
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
 

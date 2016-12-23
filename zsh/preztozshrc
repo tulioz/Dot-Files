@@ -66,3 +66,5 @@ function _completemarks {
 
 compctl -K _completemarks jump
 compctl -K _completemarks unmark
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
