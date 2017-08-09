@@ -35,6 +35,10 @@ Install
 
     `ln -s ~/Dot-Files/Vim/vimrc ~/.vimrc`
 
+3. Set up custom font
+
+    `cp ~/Dot-Files/Inconsolata\ for\ Powerline.otf ~/Library/Font`
+
 Some plugins will require some extra configuration.
 
 ### TagBar
