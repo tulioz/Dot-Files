@@ -10,7 +10,7 @@ Install
 
 3. Install Homebrew:
 
-    `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+    `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 4. Create ~/dev directory:
 
@@ -19,7 +19,7 @@ Install
 ## brew
 1. Brew install key tools
 
-    `brew install $(<~/Dot-Files/brew-packages.txt)`
+    `cd ~/Dot-Files && brew bundle`
     
 ## python packages
 1. pip install important global packages
