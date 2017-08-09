@@ -100,11 +100,6 @@ For real troubleshooting check [this](https://github.com/sorin-ionescu/prezto#tr
 #### Usage
 For prezto usage instructions go [here](https://github.com/sorin-ionescu/prezto#usage).
 
-### Powerline
-To use Powerline properly you'll need to install Inconsolata for Powerline,
-follow instructions on how to do so [here](https://powerline.readthedocs.org/en/master/installation.html#patched-fonts).
-Or on OSX simply double click the .otf file.
-
 ## Set Up github
 1. Generate and store ssh key for github
 
@@ -113,30 +108,15 @@ Or on OSX simply double click the .otf file.
 ## List of Mac Apps
 
 ### App Store
-* Textual
-* Caffeine
-* The Unarchiver
-* Dash
-* SourceTree
+* Amphetamine
 * Xcode
 * Growl
 * HardwareGrowler
 * Kaleidoscope (don't currently have)
-* Reeder 2
+* Reeder 3
 
 ### Non-App Store
-* [iterm 2](http://iterm2.com/)
-* f.lux
 * Tower
-* Dropbox
-* Chrome
-* Firefox
 * PyCharm
 * TotalFinder
-* Alfred
-* Divvy
-* ClipMenu
-* Bartender
-* Pandabar
 * Office Suite (maybe)
-* Crashplan
