@@ -35,14 +35,7 @@ Install
 
     `ln -s ~/Dot-Files/Vim/vimrc ~/.vimrc`
 
-3. Once that is complete run Vim and type the following to install all the plugins:
-
-    `:BundleInstall`
-
 Some plugins will require some extra configuration.
-
-### [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
-`cd ~/.vim/bundle/YouCompleteMe; ./install.sh`
 
 ### TagBar
 In `Dot-Files/Vim/vimrc` confirm that `g:tagbar_ctags_bin` points to exuberant ctags on the
@@ -57,22 +50,13 @@ system, or remove the current line if your ctags is in your PATH.
 
     `git config --global core.excludesfile ~/.gitignore_global`
 
-3. Set git Push default
-
-    `git config --global push.default simple`
-
-4. Set up git username
+3. Set up git username
 
     `git config --global user.name "Your Name Here"`
 
-5. Set up git email
+4. Set up git email
 
     `git config --global user.email "your_email@youremail.com"`
-
-6. Default to git merege --no-ff
-
-    `git config --global merge.ff no`
-
 
 ## zsh with prezto
 1. Symlink .prezto by doing:
