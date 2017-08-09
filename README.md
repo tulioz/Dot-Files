@@ -114,6 +114,9 @@ For prezto usage instructions go [here](https://github.com/sorin-ionescu/prezto#
 * HardwareGrowler
 * Kaleidoscope (don't currently have)
 * Reeder 3
+* Airmail 3
+* Sonos
+* Wunderlist
 
 ### Non-App Store
 * Tower
