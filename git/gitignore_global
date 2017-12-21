@@ -117,3 +117,8 @@ target/
 ##############
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
 pyvenv.cfg
+
+
+# Javascript #
+##############
+node_modules

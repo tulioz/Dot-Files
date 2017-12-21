@@ -12,9 +12,6 @@ fi
 
 # Customize to your needs...
 
-# Load RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
 # Source private vars for EC2, etc.
 if [[ -a ~/private_vars.zsh ]]; then
     source ~/private_vars.zsh
@@ -34,16 +31,32 @@ fi
 # node.js
 export NODE_PATH="/usr/local/lib/node"
 
-# Add RVM, ec2, homebrew related stuff to PATH
-#PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH
+# Add homebrew related stuff to PATH
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
-PATH=$PATH:$HOME/.rvm/bin:$EC2_HOME/bin
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/dev
-#source /usr/local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 source /usr/local/bin/virtualenvwrapper_lazy.sh
+
+# command not found
+if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
+
+# fix virtualenvs
+function fixvirtualenv {
+    gfind ~/.virtualenvs/$1/ -type l -xtype l -delete
+    virtualenv ~/.virtualenvs/$1
+    echo "virtualenv $1 fixed"
+}
+
+# fix virtualenvs
+function fixvirtualenv2 {
+    gfind ~/.virtualenvs/$1/ -type l -xtype l -delete
+    virtualenv ~/.virtualenvs/$1
+    echo "virtualenv $1 fixed"
+}
+
 
 export MARKPATH=$HOME/.marks
 function jump { 

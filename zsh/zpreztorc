@@ -41,7 +41,8 @@ zstyle ':prezto:load' pmodule \
   'homebrew' \
   'syntax-highlighting' \
   'history-substring-search' \
-  'prompt'
+  'prompt' \
+  'node'
 
 #
 # Editor
