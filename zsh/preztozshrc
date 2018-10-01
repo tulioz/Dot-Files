@@ -32,13 +32,12 @@ fi
 export NODE_PATH="/usr/local/lib/node"
 
 # Add homebrew related stuff to PATH
-PATH=/usr/local/bin:/usr/local/sbin:$PATH
+PATH=/usr/local/bin:/usr/local/sbin:$PATH:~/go/bin
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/dev
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 # command not found
 if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
@@ -57,27 +56,9 @@ function fixvirtualenv2 {
     echo "virtualenv $1 fixed"
 }
 
-
-export MARKPATH=$HOME/.marks
-function jump { 
-    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
-}
-function mark { 
-    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
-}
-function unmark { 
-    rm -i "$MARKPATH/$1"
-}
-
-function marks {
-    \ls -l "$MARKPATH" | tail -n +2 | sed 's/  / /g' | cut -d' ' -f9- | awk -F ' -> ' '{printf "%-10s -> %s\n", $1, $2}'
-}
-
-function _completemarks {
-  reply=($(ls $MARKPATH))
-}
-
-compctl -K _completemarks jump
-compctl -K _completemarks unmark
-
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
+# Kubernetes
+if [[ -x "$(command -v kubectl)" ]]; then
+  source <(kubectl completion zsh)
+fi
