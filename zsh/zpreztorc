@@ -34,15 +34,12 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'git' \
   'rsync' \
-  'ruby' \
-  'tmux' \
   'python' \
   'osx' \
   'homebrew' \
   'syntax-highlighting' \
   'history-substring-search' \
-  'prompt' \
-  'node'
+  'prompt'
 
 #
 # Editor
@@ -98,6 +95,16 @@ zstyle ':prezto:module:git:status:ignore' submodules 'all'
 zstyle ':prezto:module:prompt' theme 'sorin'
 
 #
+# Python
+#
+
+# Auto switch the Python virtualenv on directory change.
+# zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'
+
+# Automatically initialize virtualenvwrapper if pre-requisites are met.
+zstyle ':prezto:module:python:virtualenv' initialize 'yes'
+
+#
 # Screen
 #
 
@@ -149,7 +156,7 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 # zstyle ':prezto:module:tmux:auto-start' local 'yes'
 
 # Auto start a session when Zsh is launched in a SSH connection.
-zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+# zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 
 # Integrate with iTerm2.
-zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+# zstyle ':prezto:module:tmux:iterm' integrate 'yes'
