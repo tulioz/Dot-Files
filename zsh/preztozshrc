@@ -28,9 +28,6 @@ elif [[ $OSTYPE == linux-gnu ]] then
     export VISUAL='gvim -f'
 fi
 
-# node.js
-export NODE_PATH="/usr/local/lib/node"
-
 # Add homebrew related stuff to PATH
 PATH=/usr/local/bin:/usr/local/sbin:$PATH:~/go/bin
 
@@ -40,7 +37,7 @@ export PROJECT_HOME=$HOME/dev
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 
 # command not found
-if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
+# if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
 
 # fix virtualenvs
 function fixvirtualenv {
@@ -58,7 +55,3 @@ function fixvirtualenv2 {
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
-# Kubernetes
-if [[ -x "$(command -v kubectl)" ]]; then
-  source <(kubectl completion zsh)
-fi
