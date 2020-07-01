@@ -88,6 +88,10 @@ system, or remove the current line if your ctags is in your PATH.
 
     `ln -fs ~/Dot-Files/zsh/zpreztorc ~/.zpreztorc`
 
+5. Symlink in powerlevel10k config:
+
+    `ln -fs ~/Dot-Files/powerlevel10k-config ~/.p10k.zsh`
+
 6. Set Zsh as your default shell:
 
     `chsh -s /bin/zsh`
@@ -110,16 +114,12 @@ For prezto usage instructions go [here](https://github.com/sorin-ionescu/prezto#
 ### App Store
 * Amphetamine
 * Xcode
-* Growl
-* HardwareGrowler
-* Kaleidoscope (don't currently have)
-* Reeder 3
-* Airmail 3
+* Reeder 4
 * Sonos
-* Wunderlist
+* Microsoft To Do
+* 1Password
 
 ### Non-App Store
-* Tower
 * PyCharm
-* TotalFinder
-* Office Suite (maybe)
+* Scroll Reverser
+* iStat Menus
