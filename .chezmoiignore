@@ -1,0 +1,4 @@
+*/gcloud/*
+*/goose/*
+*/pgcli/*
+!*/pgcli/config
