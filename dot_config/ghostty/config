@@ -1,0 +1,15 @@
+theme = catppuccin-mocha.conf
+
+keybind = cmd+right=next_tab
+keybind = cmd+left=previous_tab
+
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+command = /opt/homebrew/bin/fish
+
+font-family = JetBrainsMono NFM Regular
+font-feature = -calt
+font-size = 14
+
+window-padding-x = 4,4
+window-padding-y = 1,8

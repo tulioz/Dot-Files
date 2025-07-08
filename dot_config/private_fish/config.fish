@@ -1,6 +1,14 @@
+# homebrew first
+/opt/homebrew/bin/brew shellenv | source
+
+set fish_greeting
+
 abbr --add brewu 'brew update && brew upgrade'
 
 alias claude="/Users/ofergoldstein/.claude/local/claude"
+
+set -gx EDITOR "code --wait"
+set -gx VISUAL "code --wait"
 
 string match -q "$TERM_PROGRAM" "vscode"
 and . (code --locate-shell-integration-path fish)
@@ -15,3 +23,26 @@ thefuck --alias | source
 zoxide init fish | source
 
 starship init fish | source
+
+direnv hook fish | source
+
+# adds alias for "kubectl" to "kubecolor" with completions
+function kubectl --wraps kubectl
+  command kubecolor $argv
+end
+
+# reuse "kubectl" completions on "kubecolor"
+function kubecolor --wraps kubectl
+  command kubecolor $argv
+end
+
+abbr --add k 'kubectl'
+
+abbr --add dev 'cd ~/dev'
+
+abbr --add python "ipython"
+abbr --add python3 "ipython"
+
+abbr --add htopu 'htop -u (whoami)'
+
+abbr --add cat 'bat'
