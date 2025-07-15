@@ -20,8 +20,6 @@ end
 
 thefuck --alias | source
 
-zoxide init fish | source
-
 starship init fish | source
 
 direnv hook fish | source
@@ -36,6 +34,8 @@ function kubecolor --wraps kubectl
   command kubecolor $argv
 end
 
+alias ls='eza --all --long --group-directories-first --icons --git --header --no-user --hyperlink'
+
 abbr --add k 'kubectl'
 
 abbr --add dev 'cd ~/dev'
@@ -46,3 +46,5 @@ abbr --add python3 "ipython"
 abbr --add htopu 'htop -u (whoami)'
 
 abbr --add cat 'bat'
+
+zoxide init fish | source

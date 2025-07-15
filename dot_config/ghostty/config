@@ -13,3 +13,5 @@ font-size = 14
 
 window-padding-x = 4,4
 window-padding-y = 1,8
+
+scrollback-limit = 40_000_000
