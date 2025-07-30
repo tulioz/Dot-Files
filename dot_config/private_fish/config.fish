@@ -1,6 +1,8 @@
 # homebrew first
 /opt/homebrew/bin/brew shellenv | source
 
+set -gx XDG_CONFIG_HOME $HOME/.config
+
 set fish_greeting
 
 abbr --add brewu 'brew update && brew upgrade'
