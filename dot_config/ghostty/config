@@ -11,7 +11,14 @@ font-family = JetBrainsMono NFM Regular
 font-feature = -calt
 font-size = 14
 
-window-padding-x = 4,4
+window-padding-x = 4,14
 window-padding-y = 1,8
+window-padding-balance = true
 
 scrollback-limit = 40_000_000
+
+quick-terminal-size = 33%
+
+window-inherit-working-directory = false
+
+auto-update = download

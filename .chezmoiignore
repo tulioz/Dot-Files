@@ -1,3 +1,5 @@
+.gitconfig.local
+
 */gcloud/*
 */goose/*
 */pgcli/*
