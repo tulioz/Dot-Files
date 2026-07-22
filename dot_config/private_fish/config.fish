@@ -62,3 +62,8 @@ direnv hook fish | source
 zoxide init fish | source
 
 set -gx PATH "$HOME/.local/bin" $PATH
+
+# updates PATH for the Google Cloud SDK
+if test -f "$HOME/dev/google-cloud-sdk/path.fish.inc"
+    source "$HOME/dev/google-cloud-sdk/path.fish.inc"
+end
