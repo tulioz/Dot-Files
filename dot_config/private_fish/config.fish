@@ -53,8 +53,6 @@ if status is-interactive
     atuin init fish | source
 end
 
-thefuck --alias | source
-
 starship init fish | source
 
 direnv hook fish | source

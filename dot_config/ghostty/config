@@ -7,6 +7,8 @@ keybind = global:ctrl+grave_accent=toggle_quick_terminal
 
 command = /opt/homebrew/bin/fish
 
+shell-integration-features = ssh-env,ssh-terminfo
+
 font-family = JetBrainsMono NFM Regular
 font-feature = -calt
 font-size = 14
@@ -20,5 +22,6 @@ scrollback-limit = 40_000_000
 quick-terminal-size = 33%
 
 window-inherit-working-directory = false
+window-save-state = always
 
 auto-update = download
