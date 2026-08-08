@@ -5,3 +5,7 @@
 */goose/*
 */pgcli/*
 !*/pgcli/config
+
+# host aliases carry internal names; control sockets are runtime state
+.ssh/config.d/*
+.ssh/control/*

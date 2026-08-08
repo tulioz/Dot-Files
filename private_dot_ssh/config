@@ -1,0 +1,21 @@
+# Machine-local host definitions. Not tracked by chezmoi, since Dot-Files is
+# public and host aliases carry internal names and addresses.
+# Must stay first: ssh keeps the first value it obtains for each keyword,
+# so anything here overrides the defaults below.
+Include config.d/*.conf
+
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+
+# Host * must stay last: ssh uses the first value it obtains for each
+# keyword, so anything above can override these defaults.
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  ServerAliveInterval 60
+  ServerAliveCountMax 3
+  ControlMaster auto
+  ControlPath ~/.ssh/control/%C
+  ControlPersist 10m
