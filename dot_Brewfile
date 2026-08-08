@@ -84,8 +84,6 @@ brew "lazygit"
 brew "libomp"
 # XML security library
 brew "libxmlsec1"
-# Powerful, lightweight programming language
-brew "lua"
 # GUI for vim, made for macOS
 brew "macvim"
 # Run a Kubernetes cluster locally
