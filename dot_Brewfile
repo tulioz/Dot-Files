@@ -64,8 +64,6 @@ brew "golangci-lint"
 brew "goreleaser"
 # Kubernetes package manager
 brew "helm"
-# Improved top (interactive process viewer)
-brew "htop"
 # Interactive computing in Python
 brew "ipython"
 # Lightweight and flexible command-line JSON processor
@@ -88,8 +86,6 @@ brew "libomp"
 brew "libxmlsec1"
 # Powerful, lightweight programming language
 brew "lua"
-# Package manager for the Lua programming language
-brew "luarocks"
 # GUI for vim, made for macOS
 brew "macvim"
 # Run a Kubernetes cluster locally
@@ -185,8 +181,6 @@ cask "lunar"
 cask "meetingbar"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
-# GPU-accelerated cross-platform terminal emulator and multiplexer
-cask "wezterm"
 go "github.com/aviator-co/av/cmd/av"
 go "github.com/aviator-co/aviator-cli/cmd/aviator"
 go "github.com/go-delve/delve/cmd/dlv"
