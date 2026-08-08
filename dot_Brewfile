@@ -6,10 +6,6 @@ tap "jordond/tap"
 tap "steipete/tap", trusted: true
 tap "terror/tap"
 tap "withgraphite/tap", trusted: true
-# Run your GitHub Actions locally
-brew "act"
-# Static checker for GitHub Actions workflow files
-brew "actionlint"
 # Code searching, linting, rewriting
 brew "ast-grep"
 # Improved shell history for zsh, bash, fish and nushell
@@ -66,8 +62,6 @@ brew "go"
 brew "golangci-lint"
 # Deliver Go binaries as fast and easily as possible
 brew "goreleaser"
-# Post-modern modal text editor
-brew "helix"
 # Kubernetes package manager
 brew "helm"
 # Improved top (interactive process viewer)
@@ -102,8 +96,6 @@ brew "macvim"
 brew "minikube"
 # Node version management
 brew "n"
-# Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx", restart_service: :changed
 # CLI for Postgres with auto-completion and syntax highlighting
@@ -136,8 +128,6 @@ brew "television"
 brew "terminal-notifier"
 # Thin wrapper for Terraform e.g. for locking state
 brew "terragrunt"
-# Programmatically correct mistyped console commands
-brew "thefuck"
 # Official tldr client written in Rust
 brew "tlrc"
 # Your CLI home video recorder
