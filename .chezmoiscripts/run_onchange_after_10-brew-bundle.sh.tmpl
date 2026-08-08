@@ -1,0 +1,21 @@
+#!/bin/bash
+# Installs everything declared in ~/.Brewfile.
+#
+# The hash below makes chezmoi re-run this script only when the Brewfile's
+# contents change, rather than on every apply.
+# Brewfile hash: {{ include "dot_Brewfile" | sha256sum }}
+
+set -eu
+
+command -v brew >/dev/null 2>&1 || {
+	echo "brew not found, skipping bundle" >&2
+	exit 0
+}
+
+brew bundle --file="$HOME/.Brewfile"
+
+# Machine-local additions, deliberately outside chezmoi so they stay off the
+# public repo. Absent on most machines, which is fine.
+if [ -f "$HOME/.Brewfile.local" ]; then
+	brew bundle --file="$HOME/.Brewfile.local"
+fi

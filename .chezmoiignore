@@ -1,4 +1,5 @@
 .gitconfig.local
+.Brewfile.local
 
 */aviator/*
 */gcloud/*

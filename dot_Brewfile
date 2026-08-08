@@ -1,0 +1,219 @@
+tap "aviator-co/tap", trusted: true
+tap "getsentry/tools"
+tap "gromgit/brewtils", trusted: true
+tap "hashicorp/tap"
+tap "jordond/tap"
+tap "steipete/tap", trusted: true
+tap "terror/tap"
+tap "withgraphite/tap", trusted: true
+# Run your GitHub Actions locally
+brew "act"
+# Static checker for GitHub Actions workflow files
+brew "actionlint"
+# Code searching, linting, rewriting
+brew "ast-grep"
+# Improved shell history for zsh, bash, fish and nushell
+brew "atuin", restart_service: :changed
+# General-purpose data compression with high compression ratio
+brew "xz"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Manage your dotfiles across multiple diverse machines, securely
+brew "chezmoi"
+# Statistics utility to count lines of code
+brew "cloc"
+# Utility for connecting securely to your Cloud SQL instances
+brew "cloud-sql-proxy"
+# Utility for rendering projects templates
+brew "copier"
+# Diff that understands syntax
+brew "difftastic"
+# Load/unload environment variables based on $PWD
+brew "direnv"
+# Disk Usage/Free Utility - a better 'df' alternative
+brew "duf"
+# Diff tool for YAML files, and sometimes JSON
+brew "dyff"
+# Modern, maintained replacement for ls
+brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# Plugin manager for the Fish shell
+brew "fisher"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Disk usage analyzer with console interface written in Go
+brew "gdu"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# Git extension for versioning large files
+brew "git-lfs"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Fast linters runner for Go
+brew "golangci-lint"
+# Deliver Go binaries as fast and easily as possible
+brew "goreleaser"
+# Post-modern modal text editor
+brew "helix"
+# Kubernetes package manager
+brew "helm"
+# Improved top (interactive process viewer)
+brew "htop"
+# Interactive computing in Python
+brew "ipython"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Handy way to save and run project-specific commands
+brew "just"
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "k9s"
+# Colorize your kubectl output
+brew "kubecolor"
+# FAST Kubernetes manifests validator, with support for Custom Resources!
+brew "kubeconform"
+# Lazier way to manage everything docker
+brew "lazydocker"
+# Simple terminal UI for git commands
+brew "lazygit"
+# LLVM's OpenMP runtime library
+brew "libomp"
+# XML security library
+brew "libxmlsec1"
+# Powerful, lightweight programming language
+brew "lua"
+# Package manager for the Lua programming language
+brew "luarocks"
+# GUI for vim, made for macOS
+brew "macvim"
+# Run a Kubernetes cluster locally
+brew "minikube"
+# Node version management
+brew "n"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
+brew "nginx", restart_service: :changed
+# CLI for Postgres with auto-completion and syntax highlighting
+brew "pgcli"
+# Open-source vector similarity search for Postgres
+brew "pgvector"
+# Object-relational database system
+brew "postgresql@17", restart_service: :changed, link: true
+# Persistent key-value database, with built-in net interface
+brew "redis", restart_service: :changed
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Rust toolchain installer
+brew "rustup"
+# Intuitive find & replace CLI
+brew "sd"
+# Easily detect and prevent bugs and anti-patterns in your codebase
+brew "semgrep"
+# Command-line utility to interact with Sentry
+brew "sentry-cli"
+# Work with remote images registries
+brew "skopeo"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Command-line tool for Stripe
+brew "stripe-cli"
+# General purpose fuzzy finder TUI
+brew "television"
+# Send macOS User Notifications from the command-line
+brew "terminal-notifier"
+# Thin wrapper for Terraform e.g. for locking state
+brew "terragrunt"
+# Programmatically correct mistyped console commands
+brew "thefuck"
+# Official tldr client written in Rust
+brew "tlrc"
+# Your CLI home video recorder
+brew "vhs"
+# Execute commands when watched files change
+brew "watchexec"
+# Internet file retriever
+brew "wget"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
+brew "zellij"
+# Find security issues in GitHub Actions setups
+brew "zizmor"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# UNIX shell (command interpreter)
+brew "zsh"
+brew "aviator-co/tap/av-nightly", trusted: true
+# CLI tool to submit verifications and create runbooks on Aviator (nightly build).
+brew "aviator-co/tap/aviator-nightly", link: false, trusted: true
+# Sentry command-line tool for error monitoring and debugging
+brew "getsentry/tools/sentry", trusted: true
+# Interactive TUI for Homebrew
+brew "gromgit/brewtils/taproom", trusted: true
+# Terraform
+brew "hashicorp/tap/terraform", trusted: true
+# Terminal-based battery and energy monitor for macos and linux
+brew "jordond/tap/jolt", trusted: true
+# Language server for just
+brew "terror/tap/just-lsp", trusted: true
+# Command-line interface for 1Password
+cask "1password-cli"
+# Screen recorder
+cask "bettercapture"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
+# Record and transcribe video conferences
+cask "fathom"
+# Collaborative team software
+cask "figma"
+cask "font-cascadia-code"
+cask "font-cascadia-mono-nf"
+cask "font-hack-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Menu bar manager
+cask "jordanbaird-ice"
+# Adaptive brightness for external displays
+cask "lunar"
+# Shows the next meeting in the menu bar
+cask "meetingbar"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
+go "github.com/aviator-co/av/cmd/av"
+go "github.com/aviator-co/aviator-cli/cmd/aviator"
+go "github.com/go-delve/delve/cmd/dlv"
+go "github.com/golangci/golangci-lint/cmd/golangci-lint"
+go "golang.org/x/tools/gopls"
+go "github.com/aviator-co/niche-git/cmd/niche-git"
+go "honnef.co/go/tools/cmd/staticcheck"
+cargo "rye-uv"
+uv "justx"
+uv "pre-commit"
+uv "prek"
+uv "pyright[nodejs]"
+uv "specify-cli", source: "git+https://github.com/github/spec-kit.git"
+npm "@google/gemini-cli"
+npm "@playwright/cli"
+npm "@typescript/native-preview"
+npm "ccstatusline"
+npm "corepack"
+npm "typescript"
+npm "web-ext"
