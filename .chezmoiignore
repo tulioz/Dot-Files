@@ -9,3 +9,16 @@
 # host aliases carry internal names; control sockets are runtime state
 .ssh/config.d/*
 .ssh/control/*
+
+# fish machine-local state: fish_variables holds secrets and is rewritten by
+# fish itself; the work/* conf.d files carry internal hosts and credentials
+.config/fish/fish_variables
+.config/fish/conf.d/work-aliases.fish
+.config/fish/conf.d/work.env.fish
+
+# zellij writes these when it rewrites its config
+.config/zellij/config.kdl.bak*
+
+# ya pkg artifacts; package.toml is the manifest, restore with `ya pkg install`
+.config/yazi/flavors/*
+.config/yazi/plugins/*

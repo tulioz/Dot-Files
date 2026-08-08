@@ -16,6 +16,13 @@
     true-color = always
     hyperlinks = true
     hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+    line-numbers = true
+    syntax-theme = Catppuccin Mocha
+
+[status]
+    short = true
+    branch = true
+    showStash = true
 
 [merge]
     conflictstyle = zdiff3

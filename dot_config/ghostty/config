@@ -1,4 +1,4 @@
-theme = catppuccin-mocha.conf
+theme = Catppuccin Mocha
 
 keybind = cmd+right=next_tab
 keybind = cmd+left=previous_tab

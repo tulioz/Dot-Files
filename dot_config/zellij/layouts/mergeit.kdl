@@ -1,0 +1,38 @@
+layout {
+    cwd "/Users/ofergoldstein/dev/mergeit"
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    
+    tab name="dev" {
+        // pane command="npx" name="cc-usage" size="25" {
+        //     args "ccusage@latest" "blocks" "--live"
+        // }
+        pane split_direction="vertical" {
+            pane stacked=true size="40%" {
+                pane command="just" name="ngrok" {
+                    args "ngrok"
+                }
+                pane command="fish" name="frontend" {
+                    args "-c" "echo 'Waiting for Flask server (localhost:5000) to be available...'; while ! curl -s http://localhost:5000 > /dev/null 2>&1; sleep 1; end; clear; just fe-nb"
+                    focus true
+                }
+            }
+            pane stacked=true size="60%" {
+                pane command="just" name="fastapi+flask" {
+                    args "devasgi"
+                }
+                pane command="just" name="celery" {
+                    args "celery"
+                    focus true
+                }
+            }
+        }
+    }
+}
