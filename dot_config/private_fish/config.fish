@@ -46,7 +46,9 @@ abbr --add k 'kubectl'
 abbr --add python "ipython"
 abbr --add python3 "ipython"
 
-abbr --add cat 'bat'
+# -pp is --style=plain --paging=never, so cat behaves like cat: no line numbers
+# or gutter to drag along when copying. Use `bat` directly for the decorated view.
+abbr --add cat 'bat -pp'
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
