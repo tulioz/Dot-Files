@@ -1,4 +1,5 @@
 tap "aviator-co/tap", trusted: true
+tap "darrylmorley/whatcable"
 tap "getsentry/tools"
 tap "gromgit/brewtils", trusted: true
 tap "hashicorp/tap"
@@ -116,6 +117,8 @@ brew "skopeo"
 brew "starship"
 # Command-line tool for Stripe
 brew "stripe-cli"
+# Easiest, most secure way to use WireGuard and 2FA
+brew "tailscale"
 # General purpose fuzzy finder TUI
 brew "television"
 # Send macOS User Notifications from the command-line
@@ -179,6 +182,8 @@ cask "lunar"
 cask "meetingbar"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# Menu bar app for USB-C cable diagnostics
+cask "darrylmorley/whatcable/whatcable", trusted: true
 go "github.com/aviator-co/av/cmd/av"
 go "github.com/aviator-co/aviator-cli/cmd/aviator"
 go "github.com/go-delve/delve/cmd/dlv"
