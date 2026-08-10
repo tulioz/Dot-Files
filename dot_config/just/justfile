@@ -1,0 +1,11 @@
+# Global recipes, reachable from any directory via the wrapper in
+# fish/conf.d/just.fish. Run `just --list` anywhere to see them.
+
+# list these recipes
+default:
+    @just --global-justfile --list
+
+# refresh the Brewfile from what's installed, then sync it to chezmoi
+brewdump:
+    brew bundle dump --no-vscode --file="$HOME/.Brewfile" --force
+    chezmoi re-add "$HOME/.Brewfile"
