@@ -18,11 +18,17 @@ function just --wraps just
             set had_local true
         end
         if command just --global-justfile --summary >/dev/null 2>&1
+            # Piping --list through tail makes just see a non-TTY and drop all
+            # colour, so force it back on, but only when we're actually on a
+            # terminal or `just > file` would capture escape codes.
+            set -l colour
+            isatty stdout; and set colour --color always
+
             $had_local; and echo
-            set_color brblack
+            isatty stdout; and set_color brblack
             echo "Global recipes:"
-            set_color normal
-            command just --global-justfile --list 2>/dev/null | tail -n +2
+            isatty stdout; and set_color normal
+            command just --global-justfile --list $colour 2>/dev/null | tail -n +2
         end
         return 0
     end
