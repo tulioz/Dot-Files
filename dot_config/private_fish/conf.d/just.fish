@@ -3,18 +3,24 @@
 # deliberately so, since merging justfiles raises name-conflict questions:
 # see casey/just#1025 and #2422.
 #
-#   just <recipe>   local recipe if it exists, otherwise the global one
-#   just --list     local recipes, then global ones under their own heading
-#   anything else   passed straight through, including bare `just`
+#   just <recipe>       local recipe if it exists, otherwise the global one
+#   just / just --list  local recipes, then global ones under their own heading
+#   anything else       passed straight through
 function just --wraps just
-    # --list: show local recipes then global ones
-    if test "$argv[1]" = --list; or test "$argv[1]" = -l
+    # bare `just` or `--list`: local output, then the global recipes.
+    # Bare `just` still runs the local default recipe, which by convention is
+    # `@just --list`; if a repo's default does real work, its output appears
+    # above the global section rather than being replaced by it.
+    if test (count $argv) -eq 0; or test "$argv[1]" = --list; or test "$argv[1]" = -l
+        set -l had_local false
         if command just --summary >/dev/null 2>&1
             command just $argv
+            set had_local true
         end
         if command just --global-justfile --summary >/dev/null 2>&1
+            $had_local; and echo
             set_color brblack
-            echo "Global recipes (just -g):"
+            echo "Global recipes:"
             set_color normal
             command just --global-justfile --list 2>/dev/null | tail -n +2
         end
