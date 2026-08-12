@@ -39,9 +39,10 @@ function just --wraps just
         return $status
     end
 
-    # a recipe name: prefer the local justfile, fall back to the global one
-    set -l local_recipes (command just --summary 2>/dev/null | string split ' ')
-    if contains -- $argv[1] $local_recipes
+    # A recipe name: prefer the local justfile, fall back to the global one.
+    # Use --show rather than --summary, because --summary lists only recipe
+    # names and would send aliases (`just dbup`) to the global justfile.
+    if command just --show $argv[1] >/dev/null 2>&1
         command just $argv
     else
         command just --global-justfile $argv

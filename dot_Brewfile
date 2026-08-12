@@ -109,8 +109,6 @@ brew "rustup"
 brew "sd"
 # Easily detect and prevent bugs and anti-patterns in your codebase
 brew "semgrep"
-# Command-line utility to interact with Sentry
-brew "sentry-cli"
 # Work with remote images registries
 brew "skopeo"
 # Cross-shell prompt for astronauts
@@ -145,7 +143,7 @@ brew "zoxide"
 brew "zsh"
 brew "aviator-co/tap/av-nightly", trusted: true
 # CLI tool to submit verifications and create runbooks on Aviator (nightly build).
-brew "aviator-co/tap/aviator-nightly", link: false, trusted: true
+brew "aviator-co/tap/aviator-nightly", trusted: true
 # Sentry command-line tool for error monitoring and debugging
 brew "getsentry/tools/sentry", trusted: true
 # Interactive TUI for Homebrew
@@ -190,6 +188,7 @@ go "github.com/go-delve/delve/cmd/dlv"
 go "github.com/golangci/golangci-lint/cmd/golangci-lint"
 go "golang.org/x/tools/gopls"
 go "github.com/aviator-co/niche-git/cmd/niche-git"
+go "github.com/mmcdole/rune/cmd/rune"
 go "honnef.co/go/tools/cmd/staticcheck"
 cargo "rye-uv"
 uv "justx"
